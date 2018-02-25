@@ -347,7 +347,20 @@ obj/linux64/Release/src/ofApp.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/video/ofVideoPlayer.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/video/ofGstVideoPlayer.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofCamera.h \
- /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h
+ /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h \
+ /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h \
+ /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/globals.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/ControlPanel.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/config/ControlWindowConfig.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/BeatDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/config/BeatConfig.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/ofApp.h:
 
@@ -1078,3 +1091,29 @@ obj/linux64/Release/src/ofApp.o: \
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofCamera.h:
 
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h:
+
+/home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h:
+
+/home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/globals.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/ControlPanel.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/config/ControlWindowConfig.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/BeatDisplay.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/config/BeatConfig.h:

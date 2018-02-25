@@ -2,11 +2,24 @@
 
 #include "ofMain.h"
 
+//Engine components
+#include "engine/Analyser.h"
+
+//Controlpanel components
+#include "view/ControlPanel.h"
+
+
 class ofApp : public ofBaseApp{
+	private:
+		Analyser mAnalyser;
+		ControlPanel mControlPanel;
+
 	public:
 		void setup();
 		void update();
+		void updateView(ofEventArgs & args);
 		void draw();
+		void drawView(ofEventArgs & args);
 		
 		void keyPressed(int key);
 		void keyReleased(int key);

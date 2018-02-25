@@ -1,0 +1,1 @@
+Working on windowing system for components, still cant get shared fft info and such.  Suspecting it's something to do with the model structs not being global, suggest switching to static variables if possible (or extern if you neeeeed).

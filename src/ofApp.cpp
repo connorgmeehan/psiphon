@@ -2,18 +2,35 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    ofSetLogLevel(OF_LOG_VERBOSE);
+    mAnalyser.setup(4);
+    mControlPanel.setup();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    mAnalyser.update();
+    mControlPanel.update();
+}
+
+void ofApp::updateView(ofEventArgs & args){
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    ofClear(0);
+    ofDrawBitmapString("Config", 0, 12);
+    mControlPanel.draw();
 }
+
+void ofApp::drawView(ofEventArgs & args){
+    ofClear(0);
+    ofDrawBitmapString("View", 0, 12);
+}
+
+
+
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
