@@ -1,22 +1,16 @@
 #pragma once
 
 #include "ofMain.h"
-#include "view/controlpanel/ControlWindow.h"
+#include "view/controlpanel/ControlWindow/ControlWindow.h"
 #include "model/Beats.h"
-
-using namespace psiBeat;
 
 class BeatDisplay : public ControlWindow {
     private:
         int mBeatState; // 0 = no beat, 1 = beat, 2 = cooldown
         int mBeatIndex = 0;
     public:
-        BeatDisplay(){
-            mWindowState.dimensions = ofVec2f(80, 50);
-        }
-
         void setup(){
-
+            mWindowState.dimensions = ofVec2f(80, 50);
         }
 
         void setBeatIndex(int index){
@@ -24,10 +18,13 @@ class BeatDisplay : public ControlWindow {
         }
 
         void update(){
-            ofLog(OF_LOG_NOTICE) << "BeatDisplay::update() - beats[" << mBeatIndex << "].amp = " << beats[mBeatIndex].amp() << " ,  " << "beats[" << mBeatIndex << "].vel = " << beats[mBeatIndex].vel();
+            mBeatState = beats->at(mBeatIndex)->getState();
         }
 
         void draw(){
+
+            ofSetColor(255);
+            nameFont.drawString(ofToString(beats->at(mBeatIndex)->amp), getTranslate().x + 5, getTranslate().y + getDimensions().y - 5);
             if(mBeatState == 0){
                 ofSetColor(45, 45, 55);
             } else if (mBeatState == 1){
@@ -35,10 +32,11 @@ class BeatDisplay : public ControlWindow {
             } else {
                 ofSetColor(150, 45, 55);
             }
-            ofDrawCircle(getTranslate() + 25, 10);
+            ofDrawCircle(getTranslate() + 20, 10);
 
             ofSetColor(150, 45, 55);
-            ofDrawRectangle(getTranslate().x + getDimensions().x, getTranslate().y + getDimensions().y, -20, beats[mBeatIndex].vel()* -getDimensions().y);
+            ofDrawRectangle( getTranslate().x + getDimensions().x-10, getTranslate().y + getDimensions().y/2, -10, beats->at(mBeatIndex)->vel * -getDimensions().y/2);
+            ofDrawRectangle(getTranslate().x + getDimensions().x, getTranslate().y + getDimensions().y, -10, beats->at(mBeatIndex)->amp * -getDimensions().y);
         }
 };
 

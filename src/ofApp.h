@@ -2,15 +2,21 @@
 
 #include "ofMain.h"
 
-//Engine components
+// Model Classes
+#include "model/Input.h"
+#include "model/Beats.h"
+
+// Engine components
 #include "engine/Analyser.h"
 
-//Controlpanel components
+// Control Panel
 #include "view/ControlPanel.h"
 
 
 class ofApp : public ofBaseApp{
 	private:
+		Input mIn;
+		Beats mBeats;
 		Analyser mAnalyser;
 		ControlPanel mControlPanel;
 

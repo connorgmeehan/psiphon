@@ -1,8 +1,7 @@
 obj/linux64/Release/src/engine/BeatAnalyser.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h \
- /home/connorgmeehan/Dropbox/psiphone/src/globals.h \
- /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/ofMain.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/utils/ofConstants.h \
  /home/connorgmeehan/openFrameworks/libs/tess2/include/tesselator.h \
@@ -350,14 +349,11 @@ obj/linux64/Release/src/engine/BeatAnalyser.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/video/ofGstVideoPlayer.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofCamera.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
- /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
- /home/connorgmeehan/Dropbox/psiphone/src/config/BeatConfig.h
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/globals.h:
-
-/home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
+/home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
 
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/ofMain.h:
 
@@ -1087,6 +1083,4 @@ obj/linux64/Release/src/engine/BeatAnalyser.o: \
 
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
-
-/home/connorgmeehan/Dropbox/psiphone/src/config/BeatConfig.h:
+/home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:

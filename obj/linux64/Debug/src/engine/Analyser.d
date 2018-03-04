@@ -351,7 +351,7 @@ obj/linux64/Debug/src/engine/Analyser.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h \
- /home/connorgmeehan/Dropbox/psiphone/src/globals.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h:
@@ -1090,6 +1090,6 @@ obj/linux64/Debug/src/engine/Analyser.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/globals.h:
+/home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:

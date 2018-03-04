@@ -1,52 +1,42 @@
 #include "BeatAnalyser.h"
 
-#include "model/Input.h"
-using namespace psiInput;
+void BeatAnalyser::setup(Input* in, Beats* beats){
+    mpBeats = beats;
+    mpIn = in;
 
-#include "model/Beats.h"
-using namespace psiBeat;
-
-
-void BeatAnalyser::setup(){
-
+    mBufferSize = in->bufferSize;
 }
 
 void BeatAnalyser::update(){
 
-    for(int i = 0; i < beats.getBeatSize(); i++){
+    for(int i = 0; i < mpBeats->getBeatSize(); i++){
 
-        int fftPos = beats[i].getPos();
-        int fftRadius = beats[i].getRadius();
+        int fftPos = mpBeats->at(i)->getPosition();
+        int fftRadius = mpBeats->at(i)->getRadius();
 
         int lowerBounds = fftPos-fftRadius;
         if(lowerBounds < 0){ lowerBounds = 0; }
         int upperBounds = fftPos+fftRadius;
-        if(upperBounds > bufferSize){ upperBounds = bufferSize-1; }
+        if(upperBounds > mpIn->bufferSize){ upperBounds = mpIn->bufferSize-1; }
 
         // Calculate amplitude (average volume)
         float amplitude = 0;
         for(int i = lowerBounds; i < upperBounds; i++){
-            amplitude += fourier[i];
+            amplitude += mpIn->fourier[i];
         }
-        beats[i].setAmp( amplitude / (upperBounds - lowerBounds) );
+        mpBeats->at(i)->setAmp( amplitude / (upperBounds - lowerBounds) );
 
         //calculating velocity
         float velocity = 0.0;
-        ofLog(OF_LOG_VERBOSE) << " vel = 0.0";
         float c = 0.0;
-        ofLog(OF_LOG_VERBOSE) << "c = 0.0";
-        for(vector<float>::size_type i = 0; i < beats[i].getHistorySize() - 1; i++){
-            ofLog(OF_LOG_VERBOSE) << "loop " << i;
-            float y = beats[i].getHistoryValue(i) - c;
-            ofLog(OF_LOG_VERBOSE) << " y =" << y;
+        for(vector<float>::size_type i = 0; i < mpBeats->at(i)->getHistorySize() - 1; i++){
+            float y = mpBeats->at(i)->getHistoryValue(i) - c;
             float t = velocity + y;
-            ofLog(OF_LOG_VERBOSE) << "t = "<< t;
             c = (t - velocity) - y;
-            ofLog(OF_LOG_VERBOSE) << " c =" << c;
             velocity = t;
-            ofLog(OF_LOG_VERBOSE) << "velocity = " << velocity;
         }
-        beats[i].setVel(velocity);
-        
+        mpBeats->at(i)->setVel(velocity);
+
+        mpBeats->at(i)->updateBeat();
     }
 }

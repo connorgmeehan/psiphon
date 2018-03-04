@@ -3,18 +3,19 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetLogLevel(OF_LOG_VERBOSE);
-    mAnalyser.setup(4);
-    mControlPanel.setup();
+    mBeats.setup(mIn.bufferSize);
+    mAnalyser.setup(&mIn, &mBeats, 4);  // sets up the audio analyser to input 4
+    mControlPanel.setup(&mBeats, &mIn); // sets up the control panel
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    mAnalyser.update();
-    mControlPanel.update();
+    mAnalyser.update(); // updates the (audio)Analyser class so it updates the model
+    mControlPanel.update(); // updates the controlPanel
 }
 
 void ofApp::updateView(ofEventArgs & args){
-
+    // TODO: Implement display manager
 }
 
 //--------------------------------------------------------------

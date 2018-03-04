@@ -4,8 +4,6 @@
 #include "ofApp.h"
 #include "ofAppGLFWWindow.h"
 
-#include "globals.h"
-
 int screenWidth = 1024;
 int screenHeight = 768;
 

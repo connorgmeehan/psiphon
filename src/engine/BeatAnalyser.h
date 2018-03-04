@@ -1,11 +1,16 @@
 #pragma once
 
-#include "globals.h"
+#include "model/Beats.h"
+#include "model/Input.h"
 
 class BeatAnalyser{
 private:
+    float mThreshold;
+    int mBufferSize;
+    Input* mpIn;
+    Beats* mpBeats;
 public:
-    void setup();
+    void setup(Input* in, Beats* beats);
     void update();
 };
 

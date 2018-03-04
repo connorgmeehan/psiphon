@@ -1,10 +1,9 @@
 #pragma once
 
-#include "ofMain.h"
+#include <vector>
 
-namespace psiInput{
-
-    extern int bufferSize;
-    extern std::vector<float> fourier;
-    
+class Input{
+public:
+    int bufferSize = 512;
+    std::vector<float> fourier;
 };

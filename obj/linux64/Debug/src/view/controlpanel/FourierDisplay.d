@@ -348,7 +348,7 @@ obj/linux64/Debug/src/view/controlpanel/FourierDisplay.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofCamera.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow.h \
- /home/connorgmeehan/Dropbox/psiphone/src/config/ControlWindowConfig.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h
 
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/ofMain.h:
@@ -1081,6 +1081,6 @@ obj/linux64/Debug/src/view/controlpanel/FourierDisplay.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/config/ControlWindowConfig.h:
+/home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
