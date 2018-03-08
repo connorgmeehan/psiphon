@@ -1,4 +1,4 @@
 ofxFFT
 ofxDatGui
 ofxSvg
-
+ofxMSAInteractiveObject

@@ -9,11 +9,9 @@ private:
     
 public:
     void setup(){
-        mWindowState.dimensions = ofVec2f(512, 256);
-
-        ofLog(OF_LOG_NOTICE) << "mWindowState.dimensions.x == " << mWindowState.dimensions.x;
-        ofLog(OF_LOG_NOTICE) << "protected variable Input* in == nullptr?  " << (in == nullptr);
-        mXSpacing = mWindowState.dimensions.x / in->bufferSize;
+        ofLog(OF_LOG_NOTICE) << "FourierDisplay::setup() ("<<ofGetElapsedTimef()<<")";
+        ofLog(OF_LOG_NOTICE) << "FourierDisplay::setup() width=="<<width<<", in->bufferSize=="<<in->bufferSize<<", (width / in->bufferSize)"<< (width/in->bufferSize);        
+        mXSpacing = width / in->bufferSize;
     }
     void update(){
         /*mFftMesh.addVertex(ofPoint(getTranslate().x, getTranslate().y + getDimensions().y));
@@ -24,9 +22,12 @@ public:
         */
     }
     void draw(){
+
+        drawWindow();
+
         ofSetColor(255,0,0);
         for(vector<float>::size_type i = 0; i < in->fourier.size(); i++){
-            ofDrawRectangle(getTranslate().x + i*mXSpacing, getTranslate().y + getDimensions().y, 1, in->fourier[i]*-getDimensions().y);
+            ofDrawRectangle(x + i*mXSpacing, y + height, 1, in->fourier[i]*-height);
         }
     }
 };

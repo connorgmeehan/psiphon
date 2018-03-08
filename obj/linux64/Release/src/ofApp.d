@@ -356,6 +356,7 @@ obj/linux64/Release/src/ofApp.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/ControlPanel.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h \
+ /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/BeatDisplay.cpp
 
@@ -1104,6 +1105,8 @@ obj/linux64/Release/src/ofApp.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/view/ControlPanel.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h:
+
+/home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp:
 

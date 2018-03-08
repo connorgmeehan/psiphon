@@ -2,46 +2,33 @@
 
 ofTrueTypeFont ControlWindow::nameFont;
 
-void ControlWindow::pre_setup(std::string name, ofVec2f translate){
+void ControlWindow::setName(std::string name){
+    ofLog(OF_LOG_VERBOSE) << "ControlWindow::setName(name: "<< name <<", position("<<x<<", "<<y<<") );";
 
     // Check if the title font has been loaded
     if(!nameFont.isLoaded()){
         nameFont.load("HelveticaNeueCyr-Light.otf", 9, true, false);
     }
-    ofLog(OF_LOG_VERBOSE) << "ControlWindow::pre_setup(name: "<< name <<", translate("<<translate.x<<", "<<translate.y<<");";
-    mWindowState.name = name;
-    mWindowState.translate = translate;
-    this->setup();
+    mName = name;
 }
 
-void ControlWindow::pre_update(){
-    this->update();
-};
-
-void ControlWindow::pre_draw(){
+void ControlWindow::drawWindow(){
+    if(!enabled) return;
     //Draw Window Background
 
     ofSetColor(25, 25, 25);
-    ofDrawRectangle(mWindowState.translate.x, mWindowState.translate.y, mWindowState.dimensions.x, mWindowState.dimensions.y);
+    ofDrawRectangle(x, y, w, h);
     
     //Draw Window Border
     ofSetColor(35, 35, 35);
-    ofDrawRectangle(mWindowState.translate.x, mWindowState.translate.y, mWindowState.dimensions.x, -12);
+    ofDrawRectangle(x, y, w, -12);
     ofSetColor(220, 220, 220);
-    //ofDrawBitmapString(mWindowState.name, mWindowState.translate.x, mWindowState.translate.y);
-    nameFont.drawString(mWindowState.name, mWindowState.translate.x+3, mWindowState.translate.y-2);
-    this->draw();
+    nameFont.drawString(mName, x+3, y-2);
 }
-
 
 
 //getters and setters
 void ControlWindow::setBeatPointer(Beats* _beats){ beats = _beats; }
 void ControlWindow::setInputPointer(Input* _input){ in = _input; }
 
-ofVec2f ControlWindow::getTranslate(){ return mWindowState.translate; }
-void ControlWindow::setTranslate(ofVec2f other){ mWindowState.translate = other; }
-
-ofVec2f ControlWindow::getDimensions(){ return mWindowState.dimensions; }
-void ControlWindow::setDimensions(ofVec2f other){ mWindowState.dimensions = other; }
-
+void ControlWindow::setUseWindow(bool _useWindow){ useWindow = _useWindow; }

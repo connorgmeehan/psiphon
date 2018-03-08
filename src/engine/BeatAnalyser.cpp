@@ -25,18 +25,7 @@ void BeatAnalyser::update(){
             amplitude += mpIn->fourier[i];
         }
         mpBeats->at(i)->setAmp( amplitude / (upperBounds - lowerBounds) );
-
-        //calculating velocity
-        float velocity = 0.0;
-        float c = 0.0;
-        for(vector<float>::size_type i = 0; i < mpBeats->at(i)->getHistorySize() - 1; i++){
-            float y = mpBeats->at(i)->getHistoryValue(i) - c;
-            float t = velocity + y;
-            c = (t - velocity) - y;
-            velocity = t;
-        }
-        mpBeats->at(i)->setVel(velocity);
-
+        mpBeats->at(i)->calculateVelocity();
         mpBeats->at(i)->updateBeat();
     }
 }

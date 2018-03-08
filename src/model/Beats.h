@@ -2,27 +2,6 @@
 
 #include "ofMain.h"
 
-class BeatElementValue {
-private:
-    float value = -1;
-public:
-    void operator=(float other){ 
-        ofLog(OF_LOG_NOTICE) << "BeatElementValue::operator("<< other <<")";  
-        value = other; 
-    }
-    const float operator()(){ 
-        ofLog(OF_LOG_NOTICE) << "BeatElementValue::operator()";  
-        return this->value; 
-    }
-    void setValue(float other){
-        ofLog(OF_LOG_NOTICE) << "BeatElementValue::setValue("<< other <<")";  
-        value = other;
-    }
-    const float getValue(){
-        ofLog(OF_LOG_NOTICE) << "BeatElementValue::getValue()";  
-        return value; }
-    };
-
 class BeatElement {
 private:
     std::string mName;
@@ -40,8 +19,6 @@ private:
     float mBeatCooldown = 0.2f;
 public:
     std::vector<float> beatHistory;
-    //BeatElementValue amp;
-    //BeatElementValue vel;
     
     float amp = 0.0f;
     float vel = 0.0f;
@@ -81,6 +58,14 @@ public:
         if(checkTimer()){
             mBeatState = 0;
         }
+    }
+
+    void calculateVelocity(){
+        float gradient = 0.0f;
+        for(int i = 0; i < beatHistory.size()-2; i++){
+            gradient += (beatHistory[i] - beatHistory[i+1]);
+        }
+        vel = (gradient / beatHistory.size());
     }
 
     int getState(){
@@ -127,7 +112,7 @@ public:
 
 class Beats {
 private:
-    int historySize = 3;
+    int historySize = 4;
     int mBufferSize;
 
     std::vector<BeatElement> mBeatsArray;
@@ -137,7 +122,7 @@ public:
 
 
     BeatElement* operator[](int i){
-        return &mBeatsArray[i];
+        return &mBeatsArray.at(i);
     }
 
     BeatElement* at(int i){

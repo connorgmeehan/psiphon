@@ -348,6 +348,7 @@ obj/linux64/Release/src/view/controlpanel/ControlWindow/ControlWindow.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/video/ofGstVideoPlayer.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofCamera.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
+ /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h
 
@@ -1080,6 +1081,8 @@ obj/linux64/Release/src/view/controlpanel/ControlWindow/ControlWindow.o: \
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofCamera.h:
 
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h:
+
+/home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
 

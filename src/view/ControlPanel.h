@@ -18,11 +18,13 @@ private:
 
     FourierDisplay mFourierDisplay; // FFT Display TODO: Add the ability to move the beat analysers and change the radius.
     BeatDisplay mKickDisplay;   //Beat display shows amplitude and velocity as well as a boolean where there is currently a beat.
+    BeatDisplay mSnareDisplay;
+    BeatDisplay mHatDisplay;
 public:
     void setup(Beats *pBeat, Input *pIn);
     void update();
     void draw();
 
-    void addControlElement(ControlWindow* window, std::string name, ofVec2f translate);
+    void addControlElement(ControlWindow* window, std::string name, ofVec2f translate, ofVec2f dimensions);
 };
 
