@@ -5,6 +5,7 @@
 // Model Classes
 #include "model/Input.h"
 #include "model/Beats.h"
+#include "model/Mouse.h"
 
 // Engine components
 #include "engine/Analyser.h"
@@ -15,9 +16,13 @@
 
 class ofApp : public ofBaseApp{
 	private:
+		// Model
 		Input mIn;
 		Beats mBeats;
+		Mouse mMouse;
+		// Controller
 		Analyser mAnalyser;
+		// View
 		ControlPanel mControlPanel;
 
 	public:

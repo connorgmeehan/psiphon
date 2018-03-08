@@ -5,23 +5,28 @@
 //Model
 #include "model/Input.h"
 #include "model/Beats.h"
+#include "model/Mouse.h"
 
+#include "view/controlpanel/DebugDisplay.cpp"
 #include "view/controlpanel/FourierDisplay.cpp"
 #include "view/controlpanel/BeatDisplay.cpp"
+
 
 class ControlPanel {
 private:
     Beats *mpBeats;
     Input *mpIn;
+    Mouse *mpMouse;
 
     vector<ControlWindow*> mControlWindows; // stores all renderable and updatable elements in the control panel.
 
+    DebugDisplay mDebugDisplay;
     FourierDisplay mFourierDisplay; // FFT Display TODO: Add the ability to move the beat analysers and change the radius.
     BeatDisplay mKickDisplay;   //Beat display shows amplitude and velocity as well as a boolean where there is currently a beat.
     BeatDisplay mSnareDisplay;
     BeatDisplay mHatDisplay;
 public:
-    void setup(Beats *pBeat, Input *pIn);
+    void setup(Beats *pBeat, Input *pIn, Mouse *pMouse);
     void update();
     void draw();
 

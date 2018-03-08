@@ -12,6 +12,8 @@ public:
         ofLog(OF_LOG_NOTICE) << "FourierDisplay::setup() ("<<ofGetElapsedTimef()<<")";
         ofLog(OF_LOG_NOTICE) << "FourierDisplay::setup() width=="<<width<<", in->bufferSize=="<<in->bufferSize<<", (width / in->bufferSize)"<< (width/in->bufferSize);        
         mXSpacing = width / in->bufferSize;
+
+        setupWindow();
     }
     void update(){
         /*mFftMesh.addVertex(ofPoint(getTranslate().x, getTranslate().y + getDimensions().y));
@@ -22,7 +24,6 @@ public:
         */
     }
     void draw(){
-
         drawWindow();
 
         ofSetColor(255,0,0);

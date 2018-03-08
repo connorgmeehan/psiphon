@@ -350,6 +350,7 @@ obj/linux64/Release/src/main.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
  /home/connorgmeehan/Dropbox/psiphone/src/ofApp.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h \
@@ -357,6 +358,7 @@ obj/linux64/Release/src/main.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/view/ControlPanel.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h \
  /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/DebugDisplay.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/BeatDisplay.cpp
 
@@ -1094,6 +1096,8 @@ obj/linux64/Release/src/main.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
 
+/home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
+
 /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h:
 
 /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h:
@@ -1107,6 +1111,8 @@ obj/linux64/Release/src/main.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h:
 
 /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/DebugDisplay.cpp:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp:
 

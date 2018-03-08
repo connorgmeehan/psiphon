@@ -5,7 +5,7 @@ void ofApp::setup(){
     ofSetLogLevel(OF_LOG_VERBOSE);
     mBeats.setup(mIn.bufferSize);
     mAnalyser.setup(&mIn, &mBeats, 4);  // sets up the audio analyser to input 4
-    mControlPanel.setup(&mBeats, &mIn); // sets up the control panel
+    mControlPanel.setup(&mBeats, &mIn, &mMouse); // sets up the control panel
 }
 
 //--------------------------------------------------------------
@@ -60,7 +60,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
+    mMouse.reset();
 }
 
 //--------------------------------------------------------------

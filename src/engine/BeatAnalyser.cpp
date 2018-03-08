@@ -5,10 +5,10 @@ void BeatAnalyser::setup(Input* in, Beats* beats){
     mpIn = in;
 
     mBufferSize = in->bufferSize;
+
 }
 
 void BeatAnalyser::update(){
-
     for(int i = 0; i < mpBeats->getBeatSize(); i++){
 
         int fftPos = mpBeats->at(i)->getPosition();

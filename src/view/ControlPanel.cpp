@@ -1,13 +1,12 @@
 #include "view/ControlPanel.h"
 
-void ControlPanel::setup(Beats *pBeat, Input *pInput){
+void ControlPanel::setup(Beats *pBeat, Input *pInput, Mouse *pMouse){
 
     mpIn = pInput;
     mpBeats = pBeat;
-
-    addControlElement( &mFourierDisplay, ofToString("fourier_display"), ofVec2f(10, 50),  ofVec2f(512, 256) );
-
-
+    mpMouse = pMouse;
+    addControlElement( &mDebugDisplay, ofToString("debug"), ofVec2f(800, 50), ofVec2f(100, 60));
+    addControlElement( &mFourierDisplay, ofToString("fourier"), ofVec2f(10, 50),  ofVec2f(512, 256) );
     addControlElement( &mKickDisplay, ofToString("beat_kick"), ofVec2f(522, 50), ofVec2f(70, 50));
     mKickDisplay.setBeatIndex(0);
     addControlElement( &mSnareDisplay, ofToString("beat_snare"), ofVec2f(522, 110), ofVec2f(70, 50));
@@ -17,9 +16,7 @@ void ControlPanel::setup(Beats *pBeat, Input *pInput){
 }
 
 void ControlPanel::update(){
-    // for(vector<ControlWindow>::size_type i = 0; i < mControlWindows.size(); i++){
-    //     mControlWindows[i]->_update();
-    // }
+
 }
 
 void ControlPanel::draw(){
@@ -29,6 +26,7 @@ void ControlPanel::draw(){
 void ControlPanel::addControlElement(ControlWindow* window, std::string name, ofVec2f translate, ofVec2f dimensions){
     window->setBeatPointer(mpBeats);
     window->setInputPointer(mpIn);
+    window->setMousePointer(mpMouse);
 
     window->setName(name);
     window->setPosition(translate.x, translate.y);
@@ -37,6 +35,7 @@ void ControlPanel::addControlElement(ControlWindow* window, std::string name, of
     window->enableAllEvents();
 
     window->setup();
+    window->setId((int) mControlWindows.size());
 
     mControlWindows.push_back( window );
 }

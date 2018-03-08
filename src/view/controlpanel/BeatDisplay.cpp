@@ -15,6 +15,9 @@ class BeatDisplay : public ControlWindow {
     public:
         void setup(){
             ofLog(OF_LOG_NOTICE) << "BeatDisplay::setup() ("<<ofGetElapsedTimef()<<")";
+            
+            setupWindow();
+
             mHistorySize = beats->at(mBeatIndex)->getHistorySize();
         }
 
@@ -30,7 +33,6 @@ class BeatDisplay : public ControlWindow {
         }
 
         void draw(){
-
             drawWindow();
 
             ofSetColor(255);
