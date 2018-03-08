@@ -38,7 +38,7 @@ void ControlWindow::drawWindow(){
     } else {
         ofSetColor( CW_BACKGROUND );
     }
-    ofDrawRectangle(x, y, w, h);
+    ofDrawRectangle(x, y, width, height);
     
     //Draw Window Border
     if(mWindowBar.isMouseOver() || isMouseOver()){
@@ -46,7 +46,7 @@ void ControlWindow::drawWindow(){
     } else {
         ofSetColor( CW_BORDER );
     }
-    ofDrawRectangle(mWindowBar.x, mWindowBar.y, w, 12);
+    ofDrawRectangle(mWindowBar.x, mWindowBar.y, width, 12);
     ofSetColor(CW_TEXT_COLOUR);
     nameFont.drawString(mName, x+3, y-2);
 

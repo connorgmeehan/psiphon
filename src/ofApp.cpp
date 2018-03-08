@@ -4,7 +4,7 @@
 void ofApp::setup(){
     ofSetLogLevel(OF_LOG_VERBOSE);
     mBeats.setup(mIn.bufferSize);
-    mAnalyser.setup(&mIn, &mBeats, 4);  // sets up the audio analyser to input 4
+    mAnalyser.setup(&mIn, &mBeats, 5);  // sets up the audio analyser to input 4
     mControlPanel.setup(&mBeats, &mIn, &mMouse); // sets up the control panel
 }
 

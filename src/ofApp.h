@@ -11,7 +11,7 @@
 #include "engine/Analyser.h"
 
 // Control Panel
-#include "view/ControlPanel.h"
+#include "view/controlpanel/ControlPanel.h"
 
 
 class ofApp : public ofBaseApp{
