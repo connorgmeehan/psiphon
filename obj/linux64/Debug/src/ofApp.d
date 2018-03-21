@@ -350,14 +350,21 @@ obj/linux64/Debug/src/ofApp.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/All.h \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/ControlPanel.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/BeatDisplay.cpp
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlPanel.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h \
+ /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DebugDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/ofApp.h:
 
@@ -1093,6 +1100,14 @@ obj/linux64/Debug/src/ofApp.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h:
 
+/home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/All.h:
+
 /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h:
 
 /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h:
@@ -1101,10 +1116,16 @@ obj/linux64/Debug/src/ofApp.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/engine/BeatAnalyser.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/ControlPanel.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlPanel.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/FourierDisplay.cpp:
+/home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/BeatDisplay.cpp:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DebugDisplay.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h:

@@ -4,6 +4,7 @@ ofTrueTypeFont ControlWindow::nameFont;
 Input* ControlWindow::in = nullptr;
 Beats* ControlWindow::beats = nullptr;
 Mouse* ControlWindow::mouse = nullptr;
+Channels* ControlWindow::channels = nullptr;
 
 void ControlWindow::setName(std::string name){
     ofLog(OF_LOG_VERBOSE) << "ControlWindow::setName(name: "<< name <<", position("<<x<<", "<<y<<") );";
@@ -11,9 +12,13 @@ void ControlWindow::setName(std::string name){
 }
 
 //getters and setters
-void ControlWindow::setBeatPointer(Beats* _beats){ beats = _beats; }
-void ControlWindow::setInputPointer(Input* _input){ in = _input; }
-void ControlWindow::setMousePointer(Mouse* _mouse){ mouse = _mouse; }
+void ControlWindow::setPointers(Beats* _beats, Input* _input, Mouse* _mouse, Channels* _channels){
+    beats = _beats;
+    in = _input;
+    mouse = _mouse;
+    channels = _channels;
+}
+
 void ControlWindow::setId(int id){ mId = id; }
 
 void ControlWindow::setupWindow(){
@@ -103,11 +108,9 @@ void ControlWindow::onPress(int x, int y, int button){
     }
 }
 
-void ControlWindow::onDragOver(int x, int y, int button){
+void ControlWindow::mouseDragged(int x, int y, int button){
     if(ofGetKeyPressed(OF_KEY_LEFT_SHIFT)){
-        ofLog() << "ControlWindow::onDragOver() button == 2";
         if(mouse->getDragType() == DRAG_WINDOW && mouse->getValue() == mId){
-            ofLog() << "ControlWindow::onDragOver() type == DRAG_WINDOW and ids match";
             setPosition(x - mouse->getOffset().x, y - mouse->getOffset().y);
             mWindowBar.setPosition(getLeft(),getTop()-12);
         }

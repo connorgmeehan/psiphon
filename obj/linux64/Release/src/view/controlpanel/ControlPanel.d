@@ -353,9 +353,11 @@ obj/linux64/Release/src/view/controlpanel/ControlPanel.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DebugDisplay.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlPanel.h:
 
@@ -1097,8 +1099,12 @@ obj/linux64/Release/src/view/controlpanel/ControlPanel.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
 
+/home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h:
+
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DebugDisplay.cpp:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h:

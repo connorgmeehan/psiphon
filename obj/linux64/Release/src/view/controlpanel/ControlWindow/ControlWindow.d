@@ -351,7 +351,8 @@ obj/linux64/Release/src/view/controlpanel/ControlWindow/ControlWindow.o: \
  /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
- /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h:
 
@@ -1090,3 +1091,5 @@ obj/linux64/Release/src/view/controlpanel/ControlWindow/ControlWindow.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h:

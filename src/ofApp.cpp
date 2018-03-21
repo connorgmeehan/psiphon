@@ -3,9 +3,17 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetLogLevel(OF_LOG_VERBOSE);
-    mBeats.setup(mIn.bufferSize);
-    mAnalyser.setup(&mIn, &mBeats, 5);  // sets up the audio analyser to input 4
-    mControlPanel.setup(&mBeats, &mIn, &mMouse); // sets up the control panel
+
+    mpIn = new Input();
+    mpBeats = new Beats();
+    mpMouse = new Mouse();
+    mpChannels = new Channels();
+
+    ModelConfig tempModelConfig;
+    tempModelConfig.setup(mpBeats, mpChannels, mpIn, mpMouse);
+
+    mAnalyser.setup(mpIn, mpBeats, 4);  // sets up the audio analyser to input 4
+    mControlPanel.setup(mpBeats, mpIn, mpMouse, mpChannels); // sets up the control panel
 }
 
 //--------------------------------------------------------------
@@ -15,7 +23,7 @@ void ofApp::update(){
 }
 
 void ofApp::updateView(ofEventArgs & args){
-    // TODO: Implement display manager
+    // TODO: Implement dis11play manager
 }
 
 //--------------------------------------------------------------
@@ -60,7 +68,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    mMouse.reset();
+    mpMouse->reset();
 }
 
 //--------------------------------------------------------------
@@ -86,4 +94,11 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
+}
+
+void ofApp::exit(){
+    delete mpIn;
+    delete mpBeats;
+    delete mpMouse;
+    delete mpChannels;
 }

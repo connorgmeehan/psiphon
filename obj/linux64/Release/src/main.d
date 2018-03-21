@@ -351,6 +351,9 @@ obj/linux64/Release/src/main.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/ofApp.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/All.h \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h \
@@ -360,7 +363,8 @@ obj/linux64/Release/src/main.o: \
  /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DebugDisplay.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
 
@@ -1098,6 +1102,12 @@ obj/linux64/Release/src/main.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
 
+/home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/All.h:
+
 /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h:
 
 /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h:
@@ -1117,3 +1127,5 @@ obj/linux64/Release/src/main.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h:

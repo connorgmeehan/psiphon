@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 #include "ofMain.h"
 #include "view/controlpanel/ControlWindow/ControlWindow.h"
 #include "model/Beats.h"

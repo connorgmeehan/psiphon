@@ -133,13 +133,6 @@ public:
 
     }
 
-    void setup(int bufferSize){
-        mBufferSize = bufferSize;
-        addBeat("kick", mBufferSize*0.02, mBufferSize*0.01);
-        addBeat("snare", mBufferSize*0.06, mBufferSize*0.03);
-        addBeat("hihat", mBufferSize*0.15, mBufferSize*0.10);
-    }
-
     void addBeat(std::string name, int position, int radius){
         BeatElement temp;
         temp.setName(name);

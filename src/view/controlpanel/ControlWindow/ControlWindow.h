@@ -16,6 +16,7 @@
 #include "model/Beats.h"
 #include "model/Input.h"
 #include "model/Mouse.h"
+#include "model/Channels.h"
 
 
 class ControlWindow : public ofxMSAInteractiveObject{
@@ -30,6 +31,7 @@ protected:
     static Input* in;
     static Beats* beats;
     static Mouse* mouse;
+    static Channels* channels;
 
     static ofTrueTypeFont nameFont;
 
@@ -48,18 +50,15 @@ public:
     
     virtual void draw(){};
 
-
-    void setBeatPointer(Beats* _beats);
-    void setInputPointer(Input* _input);
-    void setMousePointer(Mouse* _mouse);
+    static void setPointers(Beats* _beats, Input* _input, Mouse* _mouse, Channels* _channels);
+    
     void setName(std::string name);
     void setId(int id);
 
-    void drawDebug();
+    virtual void drawDebug();
 
     void onKeyPress(int key);
     void onPress(int x, int y, int button);
-    void onDragOver(int x, int y, int button);
-
+    void mouseDragged(int x, int y, int button);
 
 };

@@ -6,8 +6,10 @@
 #include "model/Input.h"
 #include "model/Beats.h"
 #include "model/Mouse.h"
+#include "model/Channels.h"
 
 // Engine components
+#include "engine/ModelConfig/ModelConfig.h"
 #include "engine/Analyser.h"
 
 // Control Panel
@@ -17,9 +19,10 @@
 class ofApp : public ofBaseApp{
 	private:
 		// Model
-		Input mIn;
-		Beats mBeats;
-		Mouse mMouse;
+		Input* mpIn;
+		Beats* mpBeats;
+		Mouse* mpMouse;
+		Channels* mpChannels;
 		// Controller
 		Analyser mAnalyser;
 		// View
@@ -43,4 +46,6 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+		void exit();
 };
