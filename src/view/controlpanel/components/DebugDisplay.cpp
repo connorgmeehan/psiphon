@@ -16,15 +16,21 @@ class DebugDisplay : public ControlWindow{
         void setup(){
             ofLog(OF_LOG_NOTICE) << "DebugDisplay::setup() ("<<ofGetElapsedTimef()<<")";
             setupWindow();
+
+            ofLog(OF_LOG_VERBOSE) << "DebugDisplay::setPointers() - channels->getBufferSize() == " << channels->getBufferSize(); 
         }
 
         void draw(){
             drawWindow();
             nameFont.drawString("fps: " + ofToString(ofGetFrameRate(),2) ,x+2, y+12);
             nameFont.drawString("framenum: " + ofToString(ofGetFrameNum(),2) ,x+2, y+24);
-            nameFont.drawString("timealive: " + ofToString(ofGetLastFrameTime(),2) ,x+2, y+36);
+            nameFont.drawString("timealive: " + ofToString(ofGetElapsedTimeMillis(),2) ,x+2, y+36);
             nameFont.drawString("mouse: (" + ofToString(mButton0)+","+ofToString(mButton1)+","+ofToString(mButton2)+")" ,x+2, y+48);
-            nameFont.drawString("mousepos: ("+ofToString(lastMouse) ,x+2, y+60);
+            nameFont.drawString("mousepos: "+ofToString(lastMouse) ,x+2, y+60);
+            nameFont.drawString("dragtype: "+ofToString(mouse->getDragType()) ,x+2, y+72);
+            nameFont.drawString("dragname: "+ofToString(mouse->getName()), x+2, y+84);
+            nameFont.drawString("dragvalue: "+ofToString(mouse->getValue()), x+2, y+96);
+
         }
 
         void mousePressed(int x, int y, int button){

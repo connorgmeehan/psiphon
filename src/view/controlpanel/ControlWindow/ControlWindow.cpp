@@ -13,6 +13,7 @@ void ControlWindow::setName(std::string name){
 
 //getters and setters
 void ControlWindow::setPointers(Beats* _beats, Input* _input, Mouse* _mouse, Channels* _channels){
+    ofLog(OF_LOG_VERBOSE) << "static ControlWindow::setPointers( Beats* "<< typeid(_beats).name() <<", Input* "<< typeid(_input).name() <<", Mouse* "<< typeid(_mouse).name() << ", Channels* " << typeid(_channels).name() << ")";
     beats = _beats;
     in = _input;
     mouse = _mouse;
@@ -37,6 +38,7 @@ void ControlWindow::drawWindow(){
     if(!enabled || !mUseWindow) return;
 
     //Draw Window Background
+    ofFill();
 
     if(isMouseOver()){
         ofSetColor( CW_HOVER_BACKGROUND );
@@ -82,7 +84,7 @@ void ControlWindow::drawDebug(){
     nameFont.drawString( "mouseOver?: " + ofToString(isMouseOver()), getRight(), getTop() + 24 );
     nameFont.drawString( "windowBar mouseOver?: " + ofToString(mWindowBar.isMouseOver()), getRight(), getTop() + 36 );
 
-    if(mouse->getDragType() == DRAG_EMPTY){
+    if(!mouse->isActive()){
         ofDrawCircle(getPosition() + mouse->getOffset(), 2);
     } else if(mouse->getDragType() == DRAG_WINDOW){
         ofSetColor(255,100,100);
@@ -102,7 +104,7 @@ void ControlWindow::onKeyPress(int key){
 
 void ControlWindow::onPress(int x, int y, int button){
     if(ofGetKeyPressed(OF_KEY_LEFT_SHIFT)){
-        if(mouse->getDragType() == DRAG_EMPTY){
+        if(!mouse->isActive()){
             mouse->set(DRAG_WINDOW, mName, mId, ofVec2f(x-getLeft(), y-getTop()));
         }
     }
@@ -113,6 +115,7 @@ void ControlWindow::mouseDragged(int x, int y, int button){
         if(mouse->getDragType() == DRAG_WINDOW && mouse->getValue() == mId){
             setPosition(x - mouse->getOffset().x, y - mouse->getOffset().y);
             mWindowBar.setPosition(getLeft(),getTop()-12);
+            updateSubComponentPositions();
         }
     }
 }

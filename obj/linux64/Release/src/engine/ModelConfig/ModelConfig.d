@@ -352,7 +352,9 @@ obj/linux64/Release/src/engine/ModelConfig/ModelConfig.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
- /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h
+ /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h \
+ /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h:
 
@@ -1093,3 +1095,7 @@ obj/linux64/Release/src/engine/ModelConfig/ModelConfig.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h:
+
+/home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h:

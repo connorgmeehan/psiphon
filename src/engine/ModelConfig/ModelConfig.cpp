@@ -32,16 +32,16 @@ void ModelConfig::setupBeats(){
 void ModelConfig::setupChannels(){
     ofLog(OF_LOG_VERBOSE) << " + ModelConfig::setupChannels() ("<<ofGetElapsedTimef()<<")";
     //Channel dummy data
-    mpChannels->addSelectableChannel(0, "Channel0");
-    mpChannels->addSelectableChannel(1, "Channel1");
-    mpChannels->addSelectableChannel(2, "Channel2");
-    mpChannels->addSelectableChannel(3, "Channel3");
-    mpChannels->addSelectableChannel(4, "Channel4");
-    mpChannels->addSelectableChannel(5, "Channel5");
-    mpChannels->addActiveChannel(mpChannels->getSelectableChannel(0));
-    mpChannels->addActiveChannel(mpChannels->getSelectableChannel(1));
-    mpChannels->addActiveChannel(mpChannels->getSelectableChannel(2));
-    mpChannels->addActiveChannel(mpChannels->getSelectableChannel(3));
+    mpChannels->addChannel(0, "Channel0", "basic");
+    mpChannels->addChannel(1, "Channel1", "basic");
+    mpChannels->addChannel(2, "Channel2", "basic");
+    mpChannels->addChannel(3, "Channel3", "basic");
+    mpChannels->addChannel(4, "Channel4", "basic");
+    mpChannels->addChannel(5, "Channel5", "basic");
+    mpChannels->addToBuffer(mpChannels->getChannel(0),0);
+    mpChannels->addToBuffer(mpChannels->getChannel(1),0);
+    mpChannels->addToBuffer(mpChannels->getChannel(2),0);
+    mpChannels->addToBuffer(mpChannels->getChannel(3),0);
     ofLog(OF_LOG_VERBOSE) << " - ModelConfig::setupChannels() ("<<ofGetElapsedTimef()<<")";
 }
 

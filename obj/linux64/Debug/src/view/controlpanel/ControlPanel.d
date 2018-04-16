@@ -348,16 +348,25 @@ obj/linux64/Debug/src/view/controlpanel/ControlPanel.o: \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/video/ofGstVideoPlayer.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofCamera.h \
  /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./ControlWindow/ControlWindow.h \
  /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DebugDisplay.cpp \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./ControlWindow/ControlSubComponent.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DebugDisplay.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/FourierDisplay/FourierDisplay.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/FourierDisplay/./FourierBeat.cpp \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/BeatDisplay.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./VelocitySlider.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./AmplitudeSlider.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./NewSelectorButton.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelector.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././SelectableChannel.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/ChannelBin.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/./ChannelBinListElement.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlPanel.h:
 
@@ -1089,7 +1098,7 @@ obj/linux64/Debug/src/view/controlpanel/ControlPanel.o: \
 
 /home/connorgmeehan/openFrameworks/libs/openFrameworks/3d/ofEasyCam.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./ControlWindow/ControlWindow.h:
 
 /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h:
 
@@ -1101,10 +1110,28 @@ obj/linux64/Debug/src/view/controlpanel/ControlPanel.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DebugDisplay.cpp:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./ControlWindow/ControlSubComponent.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay.cpp:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DebugDisplay.cpp:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay.cpp:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/FourierDisplay/FourierDisplay.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/DisplayBin/DisplayBin.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/FourierDisplay/./FourierBeat.cpp:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/BeatDisplay.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./VelocitySlider.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./AmplitudeSlider.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./NewSelectorButton.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelector.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././SelectableChannel.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/ChannelBin.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/./ChannelBinListElement.h:

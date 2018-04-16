@@ -1,32 +1,72 @@
 #include "view/controlpanel/components/DisplayBin/DisplayBin.h"
 
 void DisplayBin::setup(){
-    setupWindow();
-    ofLog(OF_LOG_VERBOSE) << "DisplayBin::setup() ("<<ofGetElapsedTimef()<<")";
-    ofLog(OF_LOG_VERBOSE) << "DisplayBin::setup() - channels == nullptr? " << (channels = nullptr);
-    ofLog(OF_LOG_VERBOSE) << "DisplayBin::setup() - beats->getBeatSize()? " << beats->getBeatSize();    
-    ofLog(OF_LOG_VERBOSE) << "DisplayBin::setup() - what is \"channels\"? " << ofToString(channels->getSelectableChannel(0).mId);
-    ofLog(OF_LOG_VERBOSE) << "DisplayBin::setup() - channels.getSelectableChannelSize() " << channels->getSelectableChannelSize();
-    ofLog(OF_LOG_VERBOSE) << "DisplayBin::setup() - channels.getActiveChannelSize() " << channels->getActiveChannelSize();
+    mChannelSelectors.resize(0);
+
+    addNewSelector();
+
+    mNewSelectorButton.enableMouseEvents();
+    mNewSelectorButton.enableAppEvents();
+    mNewSelectorButton.setPosition(x+width-dNewSelectorWidth, y);
+    mNewSelectorButton.setSize(dNewSelectorWidth, height);
+
 }
 
 void DisplayBin::update(){
-
+    
 }
 
 void DisplayBin::draw(){
     drawWindow();
-    for(int i = 0; i < selectableChannels.size(); i++){
-        selectionWidth = width / selectableChannels[i].size();
-        for(int j = 0; j < selectableChannels[i].size(); j++){
-            ofSetColor(100 + (j%2)*50);
-            ofDrawRectangle(x + j * selectionWidth, y, selectionWidth, height);
-        }
+}
+
+void DisplayBin::onPress(int x, int y, int button){
+    ControlWindow::onPress(x, y, button);
+    if(mNewSelectorButton.isMouseOver()){
+        addNewSelector();
     }
 }
 
-void DisplayBin::drawDebug(){
-    ControlWindow::drawDebug();
-    nameFont.drawString("selectionSize:" + ofToString(selectableChannels.size()),getRight(), getTop() + 48 );
-    nameFont.drawString("selectionWidth:" + ofToString(selectionWidth),getRight(), getTop() + 60 );
+void DisplayBin::addNewSelector(){
+    ChannelSelector* toadd = new ChannelSelector();
+    toadd->setSize(dSelectorWidth, height);
+    toadd->setPosition(x+mChannelSelectors.size()*dSelectorWidth,y);
+    toadd->enableAllEvents();
+    toadd->setup(channels);
+    mChannelSelectors.push_back(toadd);
+    updateWidthForSelectors();
+}
+
+void DisplayBin::addNewSelector(int index){
+    ChannelSelector* toadd = new ChannelSelector();
+    toadd->enableAllEvents();
+    toadd->setup(channels);
+    toadd->setPosition(x+index*dSelectorWidth,y);
+    toadd->enableAllEvents();
+    mChannelSelectors.insert(mChannelSelectors.begin()+index, toadd);
+    updateWidthForSelectors();
+}
+
+void DisplayBin::removeSelector(int index){
+    ChannelSelector* temp = mChannelSelectors[index];
+    mChannelSelectors.erase(mChannelSelectors.begin()+index);
+    delete temp;
+}
+
+void DisplayBin::updateWidthForSelectors(){
+    setWidth(mChannelSelectors.size()*dSelectorWidth + dNewSelectorWidth);
+    mNewSelectorButton.setPosition(x+width-dNewSelectorWidth, y);
+}
+
+void DisplayBin::updateSubComponentPositions(){
+    for(unsigned int i = 0; i < mChannelSelectors.size(); i++){
+        mChannelSelectors[i]->setPosition(x+i*dSelectorWidth, y);
+    }
+    mNewSelectorButton.setPosition(x+width-dNewSelectorWidth, y);
+}
+
+void DisplayBin::updateSelectorPositions(){
+    for(unsigned int i = 0; i < mChannelSelectors.size(); i++){
+        mChannelSelectors[i]->setPosition(x+i*dSelectorWidth, y);
+    }
 }

@@ -15,8 +15,8 @@ private:
     bool mBeatState = 0;
     float mScale = 1.0f;
 
-    float mBeatLastTime = 0.0f;
-    float mBeatCooldown = 0.2f;
+    u_int64_t mBeatLastTime = 0;
+    u_int64_t mBeatCooldown = 200;
 public:
     std::vector<float> beatHistory;
     
@@ -76,17 +76,17 @@ public:
         mBeatState = state;
     }
 
-    void resetTimer(){ mBeatLastTime = ofGetElapsedTimef(); }
-    bool checkTimer(){ return (mBeatLastTime - ofGetElapsedTimef() > mBeatCooldown); }
+    void resetTimer(){ mBeatLastTime = ofGetElapsedTimeMillis(); }
+    bool checkTimer(){ return (ofGetElapsedTimeMillis()-mBeatLastTime > mBeatCooldown); }
 
-    const inline float getAmpThreshold(){ return mAmpThreshold; }
-    void setAmpThreshold(float& other){ mAmpThreshold = other; }
+    const inline float getTriggerAmp(){ return mAmpThreshold; }
+    void setTriggerAmp(float& other){ mAmpThreshold = other; }
 
-    const inline float getVelThreshold(){ return mVelThreshold; }
-    void setVelThreshold(float& other){ mVelThreshold = other; }
+    const inline float getTriggerVel(){ return mVelThreshold; }
+    void setTriggerVel(float& other){ mVelThreshold = other; }
 
     const inline int getPosition(){ return mFftPosition; }
-    void getPosition(int position){ mFftPosition = position; }
+    void setPosition(int position){ mFftPosition = position; }
     const inline int getRadius(){ return mRadius; }
     void setRadius(int radius){ mRadius = radius; }
 
@@ -136,7 +136,7 @@ public:
     void addBeat(std::string name, int position, int radius){
         BeatElement temp;
         temp.setName(name);
-        temp.getPosition(position);
+        temp.setPosition(position);
         temp.setRadius(radius);
         temp.setHistorySize(historySize);
         mBeatsArray.push_back(temp);

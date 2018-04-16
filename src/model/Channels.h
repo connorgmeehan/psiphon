@@ -2,59 +2,67 @@
 
 #include "ofMain.h"
 
-class Channel{
+struct Channel{
+    int mId;
+    int mFolderId;
+    std::string mName;
+};
+
+class Folders{
     public:
-        int mId = -1;
-        std::string mName = "unset";
-        Channel(int id, std::string name){
-            mId = id;
-            mName = name;
+        std::vector<std::string> mFolderNames;
+
+        int getId(std::string folderName){
+
+            //If folder exists, return folder ID
+            for(std::vector<std::string>::size_type i = 0; i < mFolderNames.size(); i++){
+                if(folderName == mFolderNames[i]){
+                    return i;
+                }
+            }
+            
+            // If folder does not exist, add it and return id;
+            mFolderNames.push_back(folderName);
+            return mFolderNames.size()-1;
         }
+
+        std::string getName(int i){
+            return mFolderNames[i];
+        }
+
+        std::string operator[](int i){
+            return mFolderNames[i];
+        }
+
+        int getSize(){ return mFolderNames.size(); }
 };
 
 class Channels{
-public:
-    const std::string whatAmI = "I AM A CHANNELS CLASS FOR THE MODEL";
-    std::vector<Channel> activeChannels;
-    int activeChannelsSize = 0;
-    std::vector<Channel> selectableChannels;
-    int selectableChannelsSize = 0;
+    private:
+        Folders mFolders;
+        std::vector<Channel> mDisplayBuffer;
+        std::vector<Channel> mAvaliableChannels;
+    public:
+        Folders& folders = mFolders;
 
-    void addSelectableChannel(Channel toAdd){ 
-        ofLog(OF_LOG_VERBOSE) << " Channels::addSelectableChannel("<<toAdd.mId<<", "<<toAdd.mName<<");"; 
-        selectableChannels.push_back(toAdd); 
-        selectableChannelsSize++;
-        ofLog(OF_LOG_VERBOSE) << " Channels::addSelectableChannel() - selectableChannels.size() == " << selectableChannels.size();
-    }
-    void addSelectableChannel(int id, std::string name){
-        ofLog(OF_LOG_VERBOSE) << " Channels::addSelectableChannel("<<id<<", "<<name<<");";
-        selectableChannels.push_back(Channel(id, name));
-        selectableChannelsSize++;
-        ofLog(OF_LOG_VERBOSE) << " Channels::addSelectableChannel() - selectableChannels.size() == " << selectableChannels.size();
-    }
-    Channel getSelectableChannel(int id){
-        return selectableChannels[id];
-    }
+        void addChannel(int id, std::string name, std::string folderName){
+            Channel temp;
+            temp.mId = id;
+            temp.mName = name;
+            temp.mFolderId = mFolders.getId(folderName);
+            mAvaliableChannels.push_back(temp);
+        }
 
-    void addActiveChannel(Channel toAdd){ 
-        ofLog(OF_LOG_VERBOSE) << " Channels::addActiveChannel("<<toAdd.mId<<", "<<toAdd.mName<<");"; 
-        activeChannels.push_back(toAdd); 
-        activeChannelsSize++;
-        ofLog(OF_LOG_VERBOSE) << " Channels::addActiveChannel() - activeChannels.size() == " << activeChannels.size();
-     }
-    void addActiveChannel(int id){ activeChannels.push_back(selectableChannels.at(id));}
-    void removeActiveChannel(int id){ activeChannels.erase(activeChannels.begin() + id);}
+        void addToBuffer(Channel toAdd, int i){
+            mDisplayBuffer.insert(mDisplayBuffer.begin()+i, toAdd);
+        }
 
-    int getSelectableChannelSize(){ 
-        ofLog(OF_LOG_VERBOSE) << "Channels::getSelectableChannelSize() - selectableChannelsSize == " << selectableChannelsSize;
-        ofLog(OF_LOG_VERBOSE) << "Channels::getSelectableChannelSize() - selectableChannels.size() == " << selectableChannels.size();
-        return (int)selectableChannels.size(); 
-        
-    }
-    int getActiveChannelSize(){ 
-        ofLog(OF_LOG_VERBOSE) << "Channels::getActiveChannelSize() - activeChannelsSize == " << activeChannelsSize;
-        ofLog(OF_LOG_VERBOSE) << "Channels::getActiveChannelSize() - activeChannels.size() == " << activeChannels.size();
-        return (int) activeChannels.size(); 
-        
-    }
+        Channel getChannel(int i){ return mAvaliableChannels[i]; }
+        vector<Channel> getBuffer(int i){ return mDisplayBuffer; }
+        Channel getBufferAtPos(int i){ return mDisplayBuffer[i]; }
+        int getChannelSize(){ return (int) mAvaliableChannels.size(); }
+        int getBufferSize(){ return (int) mDisplayBuffer.size(); }
+
+        unsigned int getFoldersSize(){ return mFolders.getSize(); }
+        std::string getFolderName(int index){ return mFolders.getName(index); }
 };

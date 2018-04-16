@@ -61,4 +61,6 @@ public:
     void onPress(int x, int y, int button);
     void mouseDragged(int x, int y, int button);
 
+    virtual void updateSubComponentPositions(){};
+
 };
