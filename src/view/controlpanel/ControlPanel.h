@@ -45,6 +45,8 @@ public:
     void addControlElement(ControlWindow* window, std::string name, ofVec2f translate, ofVec2f dimensions);
 
     void mouseMoved(ofMouseEventArgs & e);
+    void mouseDragged(ofMouseEventArgs & e);
+    void mousePressed(ofMouseEventArgs & e);
 
 };
 

@@ -2,6 +2,12 @@
 
 #include "ofMain.h"
 
+enum AutoPlayBehaviour{
+    AUTO_NONE,
+    AUTO_SHUFFLE,
+    AUTO_CYCLE
+};
+
 class BeatElement {
 private:
     std::string mName;
@@ -112,7 +118,7 @@ public:
 
 class Beats {
 private:
-    int historySize = 4;
+    int historySize = 3;
     int mBufferSize;
 
     std::vector<BeatElement> mBeatsArray;

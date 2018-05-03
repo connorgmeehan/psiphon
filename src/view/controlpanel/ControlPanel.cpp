@@ -10,6 +10,8 @@ void ControlPanel::setup(Beats *pBeat, Input *pInput, Mouse *pMouse, Channels *p
     ControlSubComponent::textFont.load("HelveticaNeueCyr-Light.otf", 9, true, false);
 
     ofAddListener(ofEvents().mouseMoved, this, &ControlPanel::mouseMoved);
+    ofAddListener(ofEvents().mouseDragged, this, &ControlPanel::mouseDragged);
+    ofAddListener(ofEvents().mousePressed, this, &ControlPanel::mousePressed, OF_EVENT_ORDER_AFTER_APP);
 
     ControlWindow::setPointers(mpBeats, mpIn, mpMouse, mpChannels);
 
@@ -52,4 +54,12 @@ void ControlPanel::addControlElement(ControlWindow* window, std::string name, of
 
 void ControlPanel::mouseMoved(ofMouseEventArgs & e){
     mpMouse->update(e.x, e.y); // updates the position of the dragable GU when mouse moves
+}
+
+void ControlPanel::mouseDragged(ofMouseEventArgs & e){
+    mpMouse->update(e.x, e.y);
+}
+
+void ControlPanel::mousePressed(ofMouseEventArgs & e){
+    mpMouse->reset();
 }

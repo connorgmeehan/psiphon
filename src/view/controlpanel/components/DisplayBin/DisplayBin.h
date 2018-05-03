@@ -3,18 +3,19 @@
 #include "ofMain.h"
 #include "view/controlpanel/ControlWindow/ControlWindow.h"
 
-#include "model/Channels.h"
-
-#include "./NewSelectorButton.h"
 #include "./ChannelSelector.h"
+#include "./ChannelSelectorBehaviourControls.h"
+#include "./NewSelectorButton.h"
 
-#define dSelectorWidth 100
-#define dNewSelectorWidth 50
 
 class DisplayBin : public ControlWindow {
     public:
         NewSelectorButton mNewSelectorButton;
         std::vector<ChannelSelector*> mChannelSelectors;
+        std::vector<ChannelSelectorBehaviourControls*> mChannelBehaviours;
+
+        int mSelectorWidth = 100;
+        int mNewSelectorWidth = 50;
 
         void setup();
         void update();
@@ -30,6 +31,6 @@ class DisplayBin : public ControlWindow {
         void updateWidthForSelectors();
         void updateSelectorPositions();
 
-        void updateSubComponentPositions();
+        void updateSubComponentPositions(ofVec2f translate);
 
 };

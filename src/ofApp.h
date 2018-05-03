@@ -15,6 +15,9 @@
 // Control Panel
 #include "view/controlpanel/ControlPanel.h"
 
+//DisplayManager
+#include "view/displaymanager/DisplayManager.h"
+
 
 class ofApp : public ofBaseApp{
 	private:
@@ -27,6 +30,7 @@ class ofApp : public ofBaseApp{
 		Analyser mAnalyser;
 		// View
 		ControlPanel mControlPanel;
+		DisplayManager mDisplayManager;
 
 	public:
 		void setup();

@@ -15,5 +15,7 @@ public:
     void setup();
     void update();
     void draw();
+
+    void updateSubComponentPositions(ofVec2f translate);
 };
 

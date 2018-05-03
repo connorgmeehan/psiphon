@@ -34,16 +34,16 @@ class Folders{
             return mFolderNames[i];
         }
 
-        int getSize(){ return mFolderNames.size(); }
+        int getSize(){ 
+            return mFolderNames.size(); 
+        }
 };
 
 class Channels{
-    private:
-        Folders mFolders;
+    public:
         std::vector<Channel> mDisplayBuffer;
         std::vector<Channel> mAvaliableChannels;
-    public:
-        Folders& folders = mFolders;
+        Folders mFolders;
 
         void addChannel(int id, std::string name, std::string folderName){
             Channel temp;
@@ -58,10 +58,22 @@ class Channels{
         }
 
         Channel getChannel(int i){ return mAvaliableChannels[i]; }
+        std::string getChannelName(int i){ return mAvaliableChannels[i].mName; }
         vector<Channel> getBuffer(int i){ return mDisplayBuffer; }
         Channel getBufferAtPos(int i){ return mDisplayBuffer[i]; }
         int getChannelSize(){ return (int) mAvaliableChannels.size(); }
         int getBufferSize(){ return (int) mDisplayBuffer.size(); }
+
+
+        std::vector<int> getChannelIdByFolderId(int folderId){
+            std::vector<int> retval;
+            for(unsigned int i = 0; i < mAvaliableChannels.size(); i++){
+                if(mAvaliableChannels[i].mFolderId == folderId){
+                    retval.push_back(i);
+                }
+            }
+            return retval;
+        }
 
         unsigned int getFoldersSize(){ return mFolders.getSize(); }
         std::string getFolderName(int index){ return mFolders.getName(index); }

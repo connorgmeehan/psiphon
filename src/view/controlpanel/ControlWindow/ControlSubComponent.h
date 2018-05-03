@@ -4,8 +4,15 @@
 
 #include "ofxMSAInteractiveObject.h"
 
+#include "model/All.h"
+
 class ControlSubComponent : public ofxMSAInteractiveObject {
-public:
+public: 
+
+    static Mouse* mouse;
+    static Channels* channels;
+    static Input* input;
+    static Beats* beats;
 
     bool mDrawDebug = false;
     ofRectangle mBounds;

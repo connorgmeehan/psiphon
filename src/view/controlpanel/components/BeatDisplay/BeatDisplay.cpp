@@ -59,9 +59,7 @@ void BeatDisplay::draw(){
     nameFont.drawString(ofToString(vel, 2), x + 5, y + height - 18 );
     nameFont.drawString(ofToString(amp, 2), x + 5, y + height - 5);
 
-    if(mVelocitySlider.mClickedOn){
-        nameFont.drawString(ofToString(mTriggerVel, 2), mVelocitySlider.x + mVelocitySlider.width, mVelocitySlider.y);
-    }
+    nameFont.drawString(ofToString(mTriggerVel, 2), mVelocitySlider.x + mVelocitySlider.width, mVelocitySlider.y);
 
     ofSetColor(255);
     if(mBeatState == 0){
@@ -119,8 +117,9 @@ void BeatDisplay::onRollout(){
     mAmplitudeSlider.disableMouseEvents();
 }
 
-void BeatDisplay::updateSubComponentPositions(){
-
-    
-
+void BeatDisplay::updateSubComponentPositions(ofVec2f translate){
+    mAmplitudeSlider.translate(translate);
+    mVelocitySlider.translate(translate);
+    mAmplitudeSlider.setBounds(x,y,width,height);
+    mVelocitySlider.setBounds(x,y,width,height);
 }

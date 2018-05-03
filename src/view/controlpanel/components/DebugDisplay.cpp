@@ -9,7 +9,22 @@ class DebugDisplay : public ControlWindow{
         bool mButton0 = false;
         bool mButton1 = false;
         bool mButton2 = false;
-
+        std::vector<std::string> mDragTypeString{
+            "DRAG_EMPTY",
+            "DRAG_WINDOW",
+            "DRAG_BEAT_AMPLITUDE_SLIDER",
+            "DRAG_BEAT_VELOCITY_SLIDER",
+            "DRAG_FOURIER_BEAT",
+            // WE set the mouse drag type to 'predrag' 
+            // which means the mouse hasn't moved enough to constitute a full drag
+            // (if mouse doesn't move the channel is selected)
+            "DRAG_CHANNELBIN_PREDRAG_CHANNEL",
+            "DRAG_CHANNELBIN_PREDRAG_FOLDER",
+            "DRAG_CHANNELBIN_PREDRAG_ROOT",
+            "DRAG_CHANNELBIN_CHANNEL",
+            "DRAG_CHANNELBIN_FOLDER",
+            "DRAG_DRAWBIN_TIMER"
+        };
         ofVec2f lastMouse;
 
     public:
@@ -27,7 +42,7 @@ class DebugDisplay : public ControlWindow{
             nameFont.drawString("timealive: " + ofToString(ofGetElapsedTimeMillis(),2) ,x+2, y+36);
             nameFont.drawString("mouse: (" + ofToString(mButton0)+","+ofToString(mButton1)+","+ofToString(mButton2)+")" ,x+2, y+48);
             nameFont.drawString("mousepos: "+ofToString(lastMouse) ,x+2, y+60);
-            nameFont.drawString("dragtype: "+ofToString(mouse->getDragType()) ,x+2, y+72);
+            nameFont.drawString("dragtype: "+mDragTypeString[mouse->getDragType()] ,x+2, y+72);
             nameFont.drawString("dragname: "+ofToString(mouse->getName()), x+2, y+84);
             nameFont.drawString("dragvalue: "+ofToString(mouse->getValue()), x+2, y+96);
 

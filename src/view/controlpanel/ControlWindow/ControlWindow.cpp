@@ -113,9 +113,10 @@ void ControlWindow::onPress(int x, int y, int button){
 void ControlWindow::mouseDragged(int x, int y, int button){
     if(ofGetKeyPressed(OF_KEY_LEFT_SHIFT)){
         if(mouse->getDragType() == DRAG_WINDOW && mouse->getValue() == mId){
+            ofVec2f prevPosition = getPosition();
             setPosition(x - mouse->getOffset().x, y - mouse->getOffset().y);
             mWindowBar.setPosition(getLeft(),getTop()-12);
-            updateSubComponentPositions();
+            updateSubComponentPositions(getPosition() - prevPosition);
         }
     }
 }

@@ -10,7 +10,11 @@
 
 class NewSelectorButton : public ControlSubComponent {
     public:
-        
+        Mouse* mpMouse;
+        void setup(Mouse* pMouse){
+            mpMouse = pMouse;
+        }
+
         void draw(){
                 if(isMouseOver()){
                     ofSetColor(125);
@@ -23,8 +27,10 @@ class NewSelectorButton : public ControlSubComponent {
                  x+width/2-textFont.stringWidth("new selector")/2, y+height/2-textFont.stringHeight("new selector")/2);
         }        
 
-        void mouseOver(int x, int y){
-
+        void onPress(){
+            if(!mpMouse->isActive()){
+                mpMouse->reset();
+            }
         }
 
 };

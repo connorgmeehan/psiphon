@@ -356,7 +356,8 @@ obj/linux64/Release/src/view/controlpanel/components/FourierDisplay/FourierDispl
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay/././FourierBeat.cpp \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlSubComponent.h
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlSubComponent.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/All.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay/./FourierDisplay.h:
 
@@ -1105,3 +1106,5 @@ obj/linux64/Release/src/view/controlpanel/components/FourierDisplay/FourierDispl
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/FourierDisplay/././FourierBeat.cpp:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlSubComponent.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/All.h:

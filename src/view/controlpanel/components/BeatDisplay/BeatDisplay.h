@@ -30,6 +30,6 @@ class BeatDisplay : public ControlWindow {
         void onRollover(int x, int y);
         void onRollout();
 
-        void updateSubComponentPositions();
+        void updateSubComponentPositions(ofVec2f translate);
 };
 

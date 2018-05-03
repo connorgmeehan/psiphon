@@ -15,9 +15,10 @@ enum DragType{
     // (if mouse doesn't move the channel is selected)
     DRAG_CHANNELBIN_PREDRAG_CHANNEL,
     DRAG_CHANNELBIN_PREDRAG_FOLDER,
-
+    DRAG_CHANNELBIN_PREDRAG_ROOT,
     DRAG_CHANNELBIN_CHANNEL,
-    DRAG_CHANNELBIN_FOLDER
+    DRAG_CHANNELBIN_FOLDER,
+    DRAG_DISPLAYBIN_TIMER
 };
 
 class Mouse {
@@ -31,6 +32,11 @@ class Mouse {
         
     void reset(){
         mbActive = false;
+        mDragable.setType(0);
+    }
+
+    void clear(){
+        set(DRAG_EMPTY, ofToString("empty"), -1, ofVec2f(0,0));
     }
 
     void set(DragType dragType, std::string name, int value, ofVec2f offset){
@@ -68,5 +74,8 @@ class Mouse {
     }
     bool isActive(){
         return mbActive;
+    }
+    void setActive(){
+        mbActive = true;
     }
 };

@@ -23,19 +23,18 @@ void ofApp::update(){
 }
 
 void ofApp::updateView(ofEventArgs & args){
-    // TODO: Implement dis11play manager
+    mDisplayManager.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(0);
-    ofDrawBitmapString("Config", 0, 12);
     mControlPanel.draw();
 }
 
 void ofApp::drawView(ofEventArgs & args){
     ofClear(0);
-    ofDrawBitmapString("View", 0, 12);
+    mDisplayManager.draw();
 }
 
 

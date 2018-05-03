@@ -353,9 +353,11 @@ obj/linux64/Debug/src/view/controlpanel/components/BeatDisplay/BeatDisplay.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay/././VelocitySlider.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlSubComponent.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/model/All.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay/././AmplitudeSlider.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay/./BeatDisplay.h:
@@ -1098,10 +1100,14 @@ obj/linux64/Debug/src/view/controlpanel/components/BeatDisplay/BeatDisplay.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
 
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h:
+
 /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay/././VelocitySlider.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlSubComponent.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/model/All.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/components/BeatDisplay/././AmplitudeSlider.h:

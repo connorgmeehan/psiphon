@@ -34,10 +34,16 @@ void ModelConfig::setupChannels(){
     //Channel dummy data
     mpChannels->addChannel(0, "Channel0", "basic");
     mpChannels->addChannel(1, "Channel1", "basic");
-    mpChannels->addChannel(2, "Channel2", "basic");
-    mpChannels->addChannel(3, "Channel3", "basic");
-    mpChannels->addChannel(4, "Channel4", "basic");
-    mpChannels->addChannel(5, "Channel5", "basic");
+    mpChannels->addChannel(2, "Channel2", "basic2");
+    mpChannels->addChannel(3, "Channel3", "basic2");
+    mpChannels->addChannel(4, "Channel4", "basic2");
+    mpChannels->addChannel(5, "Channel5", "basic3");
+    mpChannels->addChannel(6, "Channel0", "basic3");
+    mpChannels->addChannel(7, "Channel1", "basic3");
+    mpChannels->addChannel(8, "Channel2", "basic4");
+    mpChannels->addChannel(9, "Channel3", "basic4");
+    mpChannels->addChannel(10, "Channel4", "basic4");
+    mpChannels->addChannel(11, "Channel5", "basic5");
     mpChannels->addToBuffer(mpChannels->getChannel(0),0);
     mpChannels->addToBuffer(mpChannels->getChannel(1),0);
     mpChannels->addToBuffer(mpChannels->getChannel(2),0);

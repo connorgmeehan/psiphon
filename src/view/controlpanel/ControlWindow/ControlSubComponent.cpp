@@ -1,6 +1,10 @@
 #include "view/controlpanel/ControlWindow/ControlSubComponent.h"
 
 ofTrueTypeFont ControlSubComponent::textFont;
+Mouse* ControlSubComponent::mouse;
+Channels* ControlSubComponent::channels;
+Input* ControlSubComponent::input;
+Beats* ControlSubComponent::beats;
 
 void ControlSubComponent::drawDebug(){
     if(mDrawDebug){

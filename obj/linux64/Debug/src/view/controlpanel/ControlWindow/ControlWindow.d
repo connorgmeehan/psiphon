@@ -352,6 +352,7 @@ obj/linux64/Debug/src/view/controlpanel/ControlWindow/ControlWindow.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Beats.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/ControlWindow/ControlWindow.h:
@@ -1091,5 +1092,7 @@ obj/linux64/Debug/src/view/controlpanel/ControlWindow/ControlWindow.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h:

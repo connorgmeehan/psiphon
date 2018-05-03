@@ -10,7 +10,20 @@ class Dragable : public ofxMSAInteractiveObject{
         ofTrueTypeFont mFont;
         std::string mName;
         int mValue;
+
+        ofPath mFolderPath;
     public:
+
+        void setup(){
+            mFolderPath.rectangle(0,0,width,height);
+            mFolderPath.moveTo(width,0);
+            mFolderPath.lineTo(width, 0);
+            mFolderPath.lineTo(width, -5);
+            mFolderPath.lineTo(width-15, -5);
+            mFolderPath.lineTo(width-18, 0);
+            
+
+        }
 
         void set(int enumIndex, std::string name, int value, ofVec2f offset){
             mEnumIndex = enumIndex;
@@ -41,10 +54,14 @@ class Dragable : public ofxMSAInteractiveObject{
                 // 4: DRAG_FOURIER_BEAT
                 // 5: DRAG_CHANNELBIN_PREDRAG_CHANNEL
                 // 6: DRAG_CHANNELBIN_PREDRAG_FOLDER
-                case 7: drawChannel(); break; // DRAG_CHANNELBIN_CHANNEL
-                case 8: drawFolder(); break; // DRAG_CHANNELBIN_FOLDER
+                // 7: DRAG_CHANNELBIN_PREDRAG_ROOT
+                case 8: drawChannel(); break; // DRAG_CHANNELBIN_CHANNEL
+                case 9: drawFolder(); break; // DRAG_CHANNELBIN_FOLDER
 
             }
+        }
+        void setType(unsigned int enumId){
+            mEnumIndex = enumId;
         }
 
         void drawEmpty(){
@@ -68,6 +85,15 @@ class Dragable : public ofxMSAInteractiveObject{
         }
 
         void drawFolder(){
+            ofFill();
+            ofSetColor(65);
+            
+            mFolderPath.draw(x,y);
+            ofSetColor(225);
+            ofNoFill();
+            // TODO: RESET LINE WIDTH
+            mFolderPath.draw(x-width/2,y-height/2);
 
+            mFont.drawString(mName,x-width/2+32,y);
         }
 };

@@ -37,3 +37,10 @@ void FourierDisplay::draw(){
         ofDrawRectangle(x + i*mXSpacing, y + height, 1, in->fourier[i]*-height);
     }
 }
+
+void FourierDisplay::updateSubComponentPositions(ofVec2f translate){
+    for(unsigned int i = 0; i < mFourierBeats.size(); i++){
+        mFourierBeats[i].translate(translate);
+        mFourierBeats[i].setBounds(x,y,width,height);
+    }
+}

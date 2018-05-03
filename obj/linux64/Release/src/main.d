@@ -370,11 +370,14 @@ obj/linux64/Release/src/main.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./VelocitySlider.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./AmplitudeSlider.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./NewSelectorButton.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelector.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././SelectableChannel.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelectorBehaviourControls.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././ChannelSelectorBehaviourControlsOrder.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././ChannelSelectorBehaviourControlsTrigger.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././ChannelSelectorBehaviourControlsTimer.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./NewSelectorButton.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/ChannelBin.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/./ChannelBinListElement.h
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/./ChannelBinList.h
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h:
 
@@ -1150,12 +1153,18 @@ obj/linux64/Release/src/main.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./NewSelectorButton.h:
-
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelector.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././SelectableChannel.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelectorBehaviourControls.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././ChannelSelectorBehaviourControlsOrder.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././ChannelSelectorBehaviourControlsTrigger.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/././ChannelSelectorBehaviourControlsTimer.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./NewSelectorButton.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/ChannelBin.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/./ChannelBinListElement.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/ChannelBin/./ChannelBinList.h:
