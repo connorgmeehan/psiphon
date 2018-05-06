@@ -1,11 +1,12 @@
 #include "engine/ModelConfig/ModelConfig.h"
 
-void ModelConfig::setup(Beats* pBeats, Channels* pChannels, Input* pInput, Mouse* pMouse){
+void ModelConfig::setup(Beats* pBeats, Channels* pChannels, Input* pInput, Mouse* pMouse, DisplayManager* pDisplayManager){
     ofLog(OF_LOG_VERBOSE) << " + ModelConfig::setup() ("<<ofGetElapsedTimef()<<")";
     mpBeats = pBeats;
     mpChannels = pChannels;
     mpInput = pInput;
     mpMouse = pMouse;
+    mpDisplayManager = pDisplayManager;
 
     setupInput();
     setupBeats();
@@ -32,22 +33,11 @@ void ModelConfig::setupBeats(){
 void ModelConfig::setupChannels(){
     ofLog(OF_LOG_VERBOSE) << " + ModelConfig::setupChannels() ("<<ofGetElapsedTimef()<<")";
     //Channel dummy data
-    mpChannels->addChannel(0, "Channel0", "basic");
-    mpChannels->addChannel(1, "Channel1", "basic");
-    mpChannels->addChannel(2, "Channel2", "basic2");
-    mpChannels->addChannel(3, "Channel3", "basic2");
-    mpChannels->addChannel(4, "Channel4", "basic2");
-    mpChannels->addChannel(5, "Channel5", "basic3");
-    mpChannels->addChannel(6, "Channel0", "basic3");
-    mpChannels->addChannel(7, "Channel1", "basic3");
-    mpChannels->addChannel(8, "Channel2", "basic4");
-    mpChannels->addChannel(9, "Channel3", "basic4");
-    mpChannels->addChannel(10, "Channel4", "basic4");
-    mpChannels->addChannel(11, "Channel5", "basic5");
-    mpChannels->addToBuffer(mpChannels->getChannel(0),0);
-    mpChannels->addToBuffer(mpChannels->getChannel(1),0);
-    mpChannels->addToBuffer(mpChannels->getChannel(2),0);
-    mpChannels->addToBuffer(mpChannels->getChannel(3),0);
+
+    for(unsigned int i = 0; i < mpDisplayManager->mChannels.size(); i++){
+        mpChannels->addChannel(i, mpDisplayManager->mChannels[i]->getName(), mpDisplayManager->mChannels[i]->getFolderName() );
+    }
+    
     ofLog(OF_LOG_VERBOSE) << " - ModelConfig::setupChannels() ("<<ofGetElapsedTimef()<<")";
 }
 

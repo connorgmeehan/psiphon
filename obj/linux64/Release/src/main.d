@@ -356,6 +356,10 @@ obj/linux64/Release/src/main.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/All.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/DisplayManager.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/ChannelPrimitive.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/All.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/./Grid.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h \
@@ -1124,6 +1128,14 @@ obj/linux64/Release/src/main.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/All.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/DisplayManager.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/ChannelPrimitive.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/All.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/./Grid.cpp:
 
 /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h:
 

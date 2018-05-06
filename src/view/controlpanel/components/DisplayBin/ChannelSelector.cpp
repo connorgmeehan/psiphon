@@ -20,7 +20,7 @@ void ChannelSelector::draw(){
 
     ofDrawRectangle(x,y,width,height);
     for(unsigned int i = 0; i < mElements.size(); i++){
-        if(mActiveChannelId == i){
+        if(mSelectedChannel == i){
             ofSetColor(70,70,20);
         } else {
             if(mHoverId == i){
@@ -44,8 +44,8 @@ void ChannelSelector::draw(){
 void ChannelSelector::changeChannel(AutoPlayBehaviour behaviour){
     switch(behaviour){
         case AUTO_NONE: /* do nothing */ break;
-        case AUTO_SHUFFLE: mActiveChannelId = (int) (ofRandomuf()*mElements.size()); break;
-        case AUTO_CYCLE: mActiveChannelId = (mActiveChannelId + 1) % mElements.size(); break;
+        case AUTO_SHUFFLE: mSelectedChannel = (int) (ofRandomuf()*mElements.size()); break;
+        case AUTO_CYCLE: mSelectedChannel = (mSelectedChannel + 1) % mElements.size(); break;
 
     }
 }
@@ -121,7 +121,7 @@ void ChannelSelector::elementPressHandler(ChannelElementStruct & el){
 }
 
 void ChannelSelector::elementActivateHandler(int activeElementId){
-    mActiveChannelId = activeElementId;
+    mSelectedChannel = activeElementId;
 }
 
 void ChannelSelector::onRollout(int x, int y){
@@ -131,3 +131,5 @@ void ChannelSelector::onRollout(int x, int y){
 void ChannelSelector::onMouseMove(int x, int y){
     mHoverId = (y-getTop())/mElementHeight; // Change the mHoverId to change which list element is highlighted
 }
+
+int ChannelSelector::getSelected(){ return mSelectedChannel; }

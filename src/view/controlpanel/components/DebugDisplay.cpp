@@ -36,6 +36,11 @@ class DebugDisplay : public ControlWindow{
         }
 
         void draw(){
+            std::string displayBufferString;
+            for(unsigned int i = 0 ; i < channels->mDisplayBuffer.size(); i++){
+                displayBufferString+= ofToString(channels->mDisplayBuffer[i]) + ",";
+            }
+
             drawWindow();
             nameFont.drawString("fps: " + ofToString(ofGetFrameRate(),2) ,x+2, y+12);
             nameFont.drawString("framenum: " + ofToString(ofGetFrameNum(),2) ,x+2, y+24);
@@ -45,6 +50,7 @@ class DebugDisplay : public ControlWindow{
             nameFont.drawString("dragtype: "+mDragTypeString[mouse->getDragType()] ,x+2, y+72);
             nameFont.drawString("dragname: "+ofToString(mouse->getName()), x+2, y+84);
             nameFont.drawString("dragvalue: "+ofToString(mouse->getValue()), x+2, y+96);
+            nameFont.drawString("displaybuffer: "+ofToString(mouse->getValue()) + displayBufferString, x+2, y+108);
 
         }
 

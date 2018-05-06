@@ -12,5 +12,6 @@ private:
 public:
     void setup(Input* in, Beats* beats);
     void update();
+    void update(std::vector<float> & fft);
 };
 

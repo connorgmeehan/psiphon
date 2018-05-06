@@ -7,15 +7,21 @@
 #include "model/Beats.h"
 #include "model/Input.h"
 // Include the general Channel class
-#include "./channels/Channel.h"
+#include "./channels/ChannelPrimitive.h"
 // Include Channels
 #include "./channels/BRUT/All.h"
 class DisplayManager {
     public:
 
-        std::vector<Channel> mChannels;
+        Channels* mpChannels;
+        Beats* mpBeats;
+        Input* mpInput;
 
-        void setup(Channels* pChannels);
+        std::vector<ChannelPrimitive*> mChannels;
+
+        Grid* mGrid = new Grid();
+
+        void setup(Input* pInput, Beats* pBeats, Channels* pChannels);
         void update();
         void draw();
 };

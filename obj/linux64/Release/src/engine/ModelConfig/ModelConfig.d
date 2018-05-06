@@ -354,7 +354,11 @@ obj/linux64/Release/src/engine/ModelConfig/ModelConfig.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Input.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Mouse.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h \
- /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h
+ /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/DisplayManager.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/ChannelPrimitive.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/All.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/./Grid.cpp
 
 /home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h:
 
@@ -1099,3 +1103,11 @@ obj/linux64/Release/src/engine/ModelConfig/ModelConfig.o: \
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/dragables/Dragable.h:
 
 /home/connorgmeehan/openFrameworks/addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/DisplayManager.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/ChannelPrimitive.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/All.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/./Grid.cpp:

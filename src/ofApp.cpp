@@ -9,8 +9,10 @@ void ofApp::setup(){
     mpMouse = new Mouse();
     mpChannels = new Channels();
 
+    mDisplayManager.setup(mpIn, mpBeats, mpChannels);
+
     ModelConfig tempModelConfig;
-    tempModelConfig.setup(mpBeats, mpChannels, mpIn, mpMouse);
+    tempModelConfig.setup(mpBeats, mpChannels, mpIn, mpMouse, &mDisplayManager);
 
     mAnalyser.setup(mpIn, mpBeats, 4);  // sets up the audio analyser to input 4
     mControlPanel.setup(mpBeats, mpIn, mpMouse, mpChannels); // sets up the control panel

@@ -41,7 +41,7 @@ class Folders{
 
 class Channels{
     public:
-        std::vector<Channel> mDisplayBuffer;
+        std::vector<int> mDisplayBuffer;
         std::vector<Channel> mAvaliableChannels;
         Folders mFolders;
 
@@ -53,14 +53,12 @@ class Channels{
             mAvaliableChannels.push_back(temp);
         }
 
-        void addToBuffer(Channel toAdd, int i){
-            mDisplayBuffer.insert(mDisplayBuffer.begin()+i, toAdd);
+        void pushToBuffer(int channelId){
+            mDisplayBuffer.push_back(channelId);
         }
 
         Channel getChannel(int i){ return mAvaliableChannels[i]; }
         std::string getChannelName(int i){ return mAvaliableChannels[i].mName; }
-        vector<Channel> getBuffer(int i){ return mDisplayBuffer; }
-        Channel getBufferAtPos(int i){ return mDisplayBuffer[i]; }
         int getChannelSize(){ return (int) mAvaliableChannels.size(); }
         int getBufferSize(){ return (int) mDisplayBuffer.size(); }
 

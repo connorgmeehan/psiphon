@@ -24,13 +24,11 @@ class ChannelSelector : public ControlSubComponent {
 
         int mAutoPlayTrigger = -1; // -1 = none
 
-        int mSelectedChannel;
+        int mSelectedChannel = -1; // This is the active channel we return for the DisplayManager to render;
         std::vector<ChannelElementStruct> mElements;
         int mHoverId = -1;
         int mElementHeight = 16;
         int mSelectableChannelSectionSize = 16;
-
-        int mActiveChannelId = -1;  // This is the active channel we return for the DisplayManager to render;
         
         void setup(Channels* pChannels, Mouse* pMouse);
         void update();
@@ -49,5 +47,7 @@ class ChannelSelector : public ControlSubComponent {
 
         void elementPressHandler(ChannelElementStruct & el);
         void elementActivateHandler(int activeElementId);
+
+        int getSelected();
 
 };

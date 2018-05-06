@@ -2,9 +2,13 @@
 
 #include "ofMain.h"
 
-#include "../Channel.h"
+#include "../ChannelPrimitive.h"
 
-class Grid : public Channel {
+class Grid : public ChannelPrimitive {
+
+    std::string getName(){ return "GRID"; }
+    std::string getFolderName(){ return "BRUT"; }
+
     void draw(){
         ofSetColor(255,0,0);
         for(int i = -20; i < 20; i++){
