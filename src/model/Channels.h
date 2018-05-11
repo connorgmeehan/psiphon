@@ -6,6 +6,17 @@ struct Channel{
     int mId;
     int mFolderId;
     std::string mName;
+    Channel(int id, std::string name, int folderId){
+        mId = id;
+        mName = name;
+        mFolderId = folderId;
+    }
+
+    Channel(const Channel & input){
+        mId = input.mId;
+        mName = input.mName;
+        mFolderId = input.mFolderId;
+    }
 };
 
 class Folders{
@@ -41,26 +52,33 @@ class Folders{
 
 class Channels{
     public:
-        std::vector<int> mDisplayBuffer;
+        std::vector<Channel> mDisplayBuffer;
         std::vector<Channel> mAvaliableChannels;
         Folders mFolders;
 
         void addChannel(int id, std::string name, std::string folderName){
-            Channel temp;
-            temp.mId = id;
-            temp.mName = name;
-            temp.mFolderId = mFolders.getId(folderName);
-            mAvaliableChannels.push_back(temp);
+            int folderId = mFolders.getId(folderName);
+            mAvaliableChannels.push_back( Channel(id, name, folderId) );
         }
 
         void pushToBuffer(int channelId){
-            mDisplayBuffer.push_back(channelId);
+            mDisplayBuffer.push_back(mAvaliableChannels[channelId]);
         }
 
         Channel getChannel(int i){ return mAvaliableChannels[i]; }
         std::string getChannelName(int i){ return mAvaliableChannels[i].mName; }
         int getChannelSize(){ return (int) mAvaliableChannels.size(); }
         int getBufferSize(){ return (int) mDisplayBuffer.size(); }
+
+        std::vector<Channel> getFolderContents(int folderId){
+            std::vector<Channel> retval;
+            for(unsigned int i = 0; i < mAvaliableChannels.size(); i++){
+                if(mAvaliableChannels[i].mFolderId == folderId){
+                    retval.push_back(mAvaliableChannels[i]);
+                }
+            }
+            return retval;
+        }
 
 
         std::vector<int> getChannelIdByFolderId(int folderId){

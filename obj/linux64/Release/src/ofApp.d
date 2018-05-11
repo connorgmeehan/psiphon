@@ -372,7 +372,7 @@ obj/linux64/Release/src/ofApp.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/FourierDisplay/./FourierBeat.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/BeatDisplay.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./VelocitySlider.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./AmplitudeSlider.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./ScaleSlider.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelector.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelectorBehaviourControls.h \
@@ -1161,7 +1161,7 @@ obj/linux64/Release/src/ofApp.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./VelocitySlider.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./AmplitudeSlider.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./ScaleSlider.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h:
 

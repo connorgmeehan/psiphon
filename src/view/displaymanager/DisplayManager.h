@@ -24,4 +24,8 @@ class DisplayManager {
         void setup(Input* pInput, Beats* pBeats, Channels* pChannels);
         void update();
         void draw();
+
+        void onKick(float & amp);
+        void onSnare(float & amp);
+        void onHat(float & amp);
 };

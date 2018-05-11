@@ -38,7 +38,7 @@ class DebugDisplay : public ControlWindow{
         void draw(){
             std::string displayBufferString;
             for(unsigned int i = 0 ; i < channels->mDisplayBuffer.size(); i++){
-                displayBufferString+= ofToString(channels->mDisplayBuffer[i]) + ",";
+                displayBufferString+= ofToString(channels->mDisplayBuffer[i].mId) + ",";
             }
 
             drawWindow();

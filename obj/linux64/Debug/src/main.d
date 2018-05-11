@@ -356,6 +356,10 @@ obj/linux64/Debug/src/main.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/model/Channels.h \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/ModelConfig/ModelConfig.h \
  /home/connorgmeehan/Dropbox/psiphone/src/model/All.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/DisplayManager.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/ChannelPrimitive.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/All.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/./Grid.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h \
  /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTBase.h \
@@ -368,7 +372,7 @@ obj/linux64/Debug/src/main.o: \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/FourierDisplay/./FourierBeat.cpp \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/BeatDisplay.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./VelocitySlider.h \
- /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./AmplitudeSlider.h \
+ /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./ScaleSlider.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelector.h \
  /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/./ChannelSelectorBehaviourControls.h \
@@ -1125,6 +1129,14 @@ obj/linux64/Debug/src/main.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/model/All.h:
 
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/DisplayManager.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/ChannelPrimitive.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/All.h:
+
+/home/connorgmeehan/Dropbox/psiphone/src/view/displaymanager/./channels/BRUT/./Grid.cpp:
+
 /home/connorgmeehan/Dropbox/psiphone/src/engine/Analyser.h:
 
 /home/connorgmeehan/openFrameworks/addons/ofxFFT/src/ofxFFTLive.h:
@@ -1149,7 +1161,7 @@ obj/linux64/Debug/src/main.o: \
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./VelocitySlider.h:
 
-/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./AmplitudeSlider.h:
+/home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/BeatDisplay/./ScaleSlider.h:
 
 /home/connorgmeehan/Dropbox/psiphone/src/view/controlpanel/./components/DisplayBin/DisplayBin.h:
 

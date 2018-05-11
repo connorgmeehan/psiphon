@@ -42,11 +42,14 @@ void ChannelSelector::draw(){
 }
 
 void ChannelSelector::changeChannel(AutoPlayBehaviour behaviour){
-    switch(behaviour){
-        case AUTO_NONE: /* do nothing */ break;
-        case AUTO_SHUFFLE: mSelectedChannel = (int) (ofRandomuf()*mElements.size()); break;
-        case AUTO_CYCLE: mSelectedChannel = (mSelectedChannel + 1) % mElements.size(); break;
-
+    if(mElements.size() > 0){
+        switch(behaviour){
+            case AUTO_NONE: /* do nothing */ break;
+            case AUTO_SHUFFLE: mSelectedChannel = (int) (ofRandomuf()*mElements.size()); break;
+            case AUTO_CYCLE: mSelectedChannel = (mSelectedChannel + 1) % mElements.size(); break;
+        }
+    } else {
+        mSelectedChannel = -1;
     }
 }
 
@@ -73,18 +76,17 @@ void ChannelSelector::mouseDragged(int x, int y, int button){
 //TODO: Change to switch statements
 void ChannelSelector::onRelease(int x, int y, int button){
     ofLog(OF_LOG_VERBOSE) << "ChannelSelector::onRelease(x:"<<x<<", y:"<<y<<", button:"<<button<<") - mpMouse->getDragType():"<<mpMouse->getDragType();
-    if(mpMouse->getDragType() == DRAG_CHANNELBIN_PREDRAG_CHANNEL){
-        elementActivateHandler( (int) (y-this->y)/mElementHeight );
-    } else if(mpMouse->getDragType() == DRAG_CHANNELBIN_CHANNEL){
-        addChannel(mpMouse->getValue(), mpMouse->getName(), (int) (y-this->y)/mElementHeight);
-    } else if(mpMouse->getDragType() == DRAG_CHANNELBIN_FOLDER){
-        addFolder(mpMouse->getValue(), mpMouse->getName(), (int) (y-this->y)/mElementHeight);
+    
+    switch(mpMouse->getDragType()){
+        case DRAG_CHANNELBIN_PREDRAG_CHANNEL:   elementActivateHandler( (int) (y-this->y)/mElementHeight ); break;
+        case DRAG_CHANNELBIN_CHANNEL:           addChannel(mpChannels->getChannel(mpMouse->getValue()), (int) (y-this->y)/mElementHeight); break;
+        case DRAG_CHANNELBIN_FOLDER:            addFolder(mpMouse->getValue(), mpMouse->getName(), (int) (y-this->y)/mElementHeight); break;
     }
 }
 
-void ChannelSelector::addChannel(int id, std::string name, int offset){
+void ChannelSelector::addChannel(int id, std::string name, int folderId, int offset){
     if(mElements.size() == 0){
-        mElements.push_back(ChannelElementStruct(id, name));
+        mElements.push_back(Channel(id, name, folderId));
         return;
     }
     
@@ -92,15 +94,28 @@ void ChannelSelector::addChannel(int id, std::string name, int offset){
         offset = mElements.size();
     }
 
-    mElements.insert(mElements.begin()+offset, ChannelElementStruct(id, name));
+    mElements.insert(mElements.begin()+offset, Channel(id, name, folderId));
 }
 
-void ChannelSelector::addFolder(int id, std::string name, int offset){
+void ChannelSelector::addChannel(Channel toadd, int offset){
+    if(mElements.size() == 0){
+        mElements.push_back(toadd);
+        return;
+    }
+
+    if(offset > mElements.size()){
+        offset = mElements.size();
+    }
+
+    mElements.insert(mElements.begin() + offset, toadd);
+}
+
+/*void ChannelSelector::addFolder(int id, std::string name, int offset){
     if(mElements.size() == 0){
         int folderId = mpChannels->mFolders.getId(name);
         std::vector<int> channelIds = mpChannels->getChannelIdByFolderId(folderId);
         for(unsigned int i = 0; i < channelIds.size(); i++){
-            mElements.push_back(ChannelElementStruct(channelIds[i], mpChannels->getChannelName(channelIds[i])));
+            mElements.push_back( Channel(channelIds[i], mpChannels->getChannelName( channelIds[i] ) ) );
         }
         return;
     }
@@ -110,18 +125,39 @@ void ChannelSelector::addFolder(int id, std::string name, int offset){
     }
     
     int folderId = mpChannels->mFolders.getId(name);
-    std::vector<int> channelIds = mpChannels->getChannelIdByFolderId(folderId);
-    for(unsigned int i = 0; i < channelIds.size(); i++){
-        mElements.insert(mElements.begin() + i + offset, ChannelElementStruct(id, name));
+    std::vector<Channel> toAdd = mpChannels->getFolderContents(folderId);
+    for(unsigned int i = 0; i < toAdd.size(); i++){
+        mElements.insert(mElements.begin() + i + offset, Channel(toAdd[i].mId, toAdd[i].mName, toAdd[i].mFolderId));
+    }
+}*/
+
+void ChannelSelector::addFolder(int id, std::string name, int offset){
+    if(mElements.size() == 0){
+        int folderId = mpChannels->mFolders.getId(name);
+        std::vector<int> channelIds = mpChannels->getChannelIdByFolderId(folderId);
+        for(unsigned int i = 0; i < channelIds.size(); i++){
+            mElements.push_back( mpChannels->getChannel(channelIds[i]) );
+        }
+        return;
+    }
+    
+    if(offset > mElements.size()){
+        offset = mElements.size();
+    }
+    
+    int folderId = mpChannels->mFolders.getId(name);
+    std::vector<Channel> toAdd = mpChannels->getFolderContents(folderId);
+    for(unsigned int i = 0; i < toAdd.size(); i++){
+        mElements.insert(mElements.begin() + i + offset, Channel(toAdd[i].mId, toAdd[i].mName, toAdd[i].mFolderId));
     }
 }
 
-void ChannelSelector::elementPressHandler(ChannelElementStruct & el){
+void ChannelSelector::elementPressHandler(Channel & el){
     mpMouse->set( DRAG_CHANNELBIN_PREDRAG_CHANNEL, el.mName, el.mId, ofVec2f(x,y) );
 }
 
 void ChannelSelector::elementActivateHandler(int activeElementId){
-    mSelectedChannel = activeElementId;
+    mSelectedChannel = activeElementId; 
 }
 
 void ChannelSelector::onRollout(int x, int y){
@@ -132,4 +168,10 @@ void ChannelSelector::onMouseMove(int x, int y){
     mHoverId = (y-getTop())/mElementHeight; // Change the mHoverId to change which list element is highlighted
 }
 
-int ChannelSelector::getSelected(){ return mSelectedChannel; }
+Channel ChannelSelector::getSelected(){ 
+    if(mSelectedChannel >= 0){
+        return mElements[mSelectedChannel]; 
+    } else {
+        return Channel(-1, "null", -1); // Returns -1
+    }
+}

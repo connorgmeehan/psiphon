@@ -14,7 +14,7 @@ void ofApp::setup(){
     ModelConfig tempModelConfig;
     tempModelConfig.setup(mpBeats, mpChannels, mpIn, mpMouse, &mDisplayManager);
 
-    mAnalyser.setup(mpIn, mpBeats, 4);  // sets up the audio analyser to input 4
+    mAnalyser.setup(mpIn, mpBeats, 5);  // sets up the audio analyser to input 4
     mControlPanel.setup(mpBeats, mpIn, mpMouse, mpChannels); // sets up the control panel
 }
 

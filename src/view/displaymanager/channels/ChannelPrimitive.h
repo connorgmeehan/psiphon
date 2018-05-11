@@ -14,6 +14,8 @@ struct Beat{
 class ChannelPrimitive {
     public:
 
+        bool isSetup = false;
+
         static std::vector<float> fft;
         static std::vector<Beat> beats;
 
@@ -23,6 +25,10 @@ class ChannelPrimitive {
         virtual void setup(){}
         virtual void update(){}
         virtual void draw(){}
+
+        virtual void onKick(float & amp){}
+        virtual void onSnare(float & amp){}
+        virtual void onHat(float & amp){}
 
         static void setFFT(std::vector<float> & toset);
 };

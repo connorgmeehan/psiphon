@@ -47,7 +47,7 @@ class VelocitySlider : public ControlSubComponent {
 
         void mouseDragged(int x, int y, int button){
             if(button == OF_MOUSE_BUTTON_1){
-                if(mpMouse->getDragType()==DRAG_BEAT_VELOCITY_SLIDER && mpMouse->getValue() == mId){
+                if(mpMouse->isActive() && mpMouse->getDragType()==DRAG_BEAT_VELOCITY_SLIDER && mpMouse->getValue() == mId){
                     setY(y-mpMouse->getOffset().y);
                     reinsertInVerticalBoundaries();
                     mUpdateFlag = true;

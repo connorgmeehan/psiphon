@@ -14,9 +14,14 @@ void DisplayBin::setup(){
 }
 
 void DisplayBin::update(){
-    channels->mDisplayBuffer.resize(0);
     for(unsigned int i = 0; i < mChannelSelectors.size(); i++){
-        channels->mDisplayBuffer.push_back( mChannelSelectors[i]->getSelected() );
+        if(mChannelSelectors[i]->getSelected().mId != 1){
+            if(i == channels->mDisplayBuffer.size()){
+                channels->mDisplayBuffer.push_back( mChannelSelectors[i]->getSelected() );
+            } else {
+                channels->mDisplayBuffer.at(i) = mChannelSelectors[i]->getSelected();
+            }
+        }
     }
 }
 

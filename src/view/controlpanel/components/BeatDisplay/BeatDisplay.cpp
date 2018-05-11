@@ -6,22 +6,30 @@ void BeatDisplay::setup(){
     setupWindow();
 
     mHistorySize = beats->at(mBeatIndex)->getHistorySize();
-    mTriggerAmp = beats->at(mBeatIndex)->getTriggerAmp();
+    mScale = beats->at(mBeatIndex)->getScale();
     mTriggerVel = beats->at(mBeatIndex)->getTriggerVel();
+
+    ofLog() << "BeatDisplay::setup() - mTriggerVel:"<<mTriggerVel;
 
     mVelocitySlider.enableMouseEvents();
     mVelocitySlider.enableAppEvents();
     mVelocitySlider.setSize(10,8);
-    mVelocitySlider.setPosition(x+width-mVelocitySlider.width,y+height/2+mTriggerVel*height/2 - mVelocitySlider.height/2);
+    mVelocitySlider.setPosition(getRight()-mVelocitySlider.width,getCenter().y+mTriggerVel*height/2 - mVelocitySlider.height/2);
+    mVelocitySlider.setPosition(
+        getRight() - mVelocitySlider.width, 
+        getCenter().y - mTriggerVel*height - mVelocitySlider.height/2 
+    ); 
+
+    
     mVelocitySlider.setBounds(x, y, width, height);
     mVelocitySlider.setup(mouse, mId);
 
-    mAmplitudeSlider.enableMouseEvents();
-    mAmplitudeSlider.enableAppEvents();
-    mAmplitudeSlider.setSize(graphWidth/mHistorySize, 8);
-    mAmplitudeSlider.setPosition(x + width - graphWidth, y + height - mTriggerAmp*height - mAmplitudeSlider.y/2);
-    mAmplitudeSlider.setBounds(x, y, width, height);
-    mAmplitudeSlider.setup(mouse, mId);
+    mScaleSlider.enableMouseEvents();
+    mScaleSlider.enableAppEvents();
+    mScaleSlider.setSize(graphWidth/mHistorySize, 8);
+    mScaleSlider.setPosition(x + width - graphWidth, y + height - mScale*height - mScaleSlider.y/2);
+    mScaleSlider.setBounds(x, y, width, height);
+    mScaleSlider.setup(mouse, mId);
 }
 
 void BeatDisplay::setBeatIndex(int index){
@@ -37,16 +45,16 @@ void BeatDisplay::update(){
     if(mVelocitySlider.mUpdateFlag = true){
         mVelocitySlider.mUpdateFlag = false;
 
-        mTriggerVel = ((y + height/2) - mVelocitySlider.y-mVelocitySlider.height/2)/height;
+        mTriggerVel = (getCenter().y - mVelocitySlider.getCenter().y)/height;
         beats->at(mBeatIndex)->setTriggerVel(mTriggerVel);
 
     }
 
-    if(mAmplitudeSlider.mUpdateFlag = true){
-        mAmplitudeSlider.mUpdateFlag = false;
+    if(mScaleSlider.mUpdateFlag = true){
+        mScaleSlider.mUpdateFlag = false;
 
-        mTriggerAmp = ((y + height) - mAmplitudeSlider.y-mAmplitudeSlider.height/2)/height;
-        beats->at(mBeatIndex)->setTriggerAmp(mTriggerAmp);
+        mScale = (getBottom() - mScaleSlider.getCenter().y)/height*3;
+        beats->at(mBeatIndex)->setScale(mScale);
     }
 
 
@@ -77,13 +85,8 @@ void BeatDisplay::draw(){
         ofDrawRectangle(x + width - graphWidth +  i*( graphWidth /mHistorySize), y + height,
         graphWidth/mHistorySize, (*beats)[mBeatIndex]->getHistoryValue(i) * -height);
     }
-    if(amp > mTriggerAmp){
-        ofSetColor(25,255,25);
-    } else {
-        ofSetColor(100);
-    }
 
-    ofDrawLine(x + width - graphWidth, y + height - mTriggerAmp*height, x + width - graphWidth + (mHistorySize/graphWidth), y + height - mTriggerAmp*height);
+    ofSetColor(100);
 
     // Draw Trigger Velocity Bar
     ofSetColor(25, 25, 200);
@@ -109,17 +112,17 @@ void BeatDisplay::drawDebug(){
 
 void BeatDisplay::onRollover(int x, int y){
     mVelocitySlider.enableMouseEvents();
-    mAmplitudeSlider.enableMouseEvents();
+    mScaleSlider.enableMouseEvents();
 }
 
 void BeatDisplay::onRollout(){
     mVelocitySlider.disableMouseEvents();
-    mAmplitudeSlider.disableMouseEvents();
+    mScaleSlider.disableMouseEvents();
 }
 
 void BeatDisplay::updateSubComponentPositions(ofVec2f translate){
-    mAmplitudeSlider.translate(translate);
+    mScaleSlider.translate(translate);
     mVelocitySlider.translate(translate);
-    mAmplitudeSlider.setBounds(x,y,width,height);
+    mScaleSlider.setBounds(x,y,width,height);
     mVelocitySlider.setBounds(x,y,width,height);
 }

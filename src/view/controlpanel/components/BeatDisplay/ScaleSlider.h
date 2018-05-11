@@ -5,7 +5,7 @@
 
 #include "model/Mouse.h"
 
-class AmplitudeSlider : public ControlSubComponent{
+class ScaleSlider : public ControlSubComponent{
     public:
         Mouse* mpMouse;
         int mId;
@@ -48,7 +48,7 @@ class AmplitudeSlider : public ControlSubComponent{
 
         void mouseDragged(int x, int y, int button){
             if(button == OF_MOUSE_BUTTON_1){
-                if(mpMouse->getDragType()==DRAG_BEAT_AMPLITUDE_SLIDER && mpMouse->getValue() == mId){
+                if(mpMouse->isActive() && mpMouse->getDragType()==DRAG_BEAT_AMPLITUDE_SLIDER && mpMouse->getValue() == mId){
                     setY(y-mpMouse->getOffset().y);
                     reinsertInVerticalBoundaries();
                 }

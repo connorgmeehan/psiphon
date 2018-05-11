@@ -25,7 +25,7 @@ class ChannelSelector : public ControlSubComponent {
         int mAutoPlayTrigger = -1; // -1 = none
 
         int mSelectedChannel = -1; // This is the active channel we return for the DisplayManager to render;
-        std::vector<ChannelElementStruct> mElements;
+        std::vector<Channel> mElements;
         int mHoverId = -1;
         int mElementHeight = 16;
         int mSelectableChannelSectionSize = 16;
@@ -34,7 +34,8 @@ class ChannelSelector : public ControlSubComponent {
         void update();
         void draw();
 
-        void addChannel(int id, std::string name, int offset);
+        void addChannel(int id, std::string name, int folderId, int offset);
+        void addChannel(Channel toadd, int offset);
         void addFolder( int id, std::string name, int offset);
         void resizeSelectableChannels();
         void changeChannel(AutoPlayBehaviour behaviour);
@@ -45,9 +46,9 @@ class ChannelSelector : public ControlSubComponent {
         void onRollout(int x, int y);
         void onMouseMove(int x, int y);
 
-        void elementPressHandler(ChannelElementStruct & el);
+        void elementPressHandler(Channel & el);
         void elementActivateHandler(int activeElementId);
 
-        int getSelected();
+        Channel getSelected();
 
 };

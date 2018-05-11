@@ -15,10 +15,10 @@ private:
     int mFftPosition = -1;
     int mRadius = -1;
 
-    float mAmpThreshold = 0.5; 
-    float mVelThreshold = 0.5;
+    float mAmpThreshold = 0.18; 
+    float mVelThreshold = 0.18;
 
-    bool mBeatState = 0;
+    int mBeatState = 0;
     float mScale = 1.0f;
 
     u_int64_t mBeatLastTime = 0;
@@ -71,7 +71,7 @@ public:
         for(int i = 0; i < beatHistory.size()-2; i++){
             gradient += (beatHistory[i] - beatHistory[i+1]);
         }
-        vel = (gradient / beatHistory.size());
+        vel = (gradient / beatHistory.size()) * mScale;
     }
 
     int getState(){
@@ -90,6 +90,9 @@ public:
 
     const inline float getTriggerVel(){ return mVelThreshold; }
     void setTriggerVel(float& other){ mVelThreshold = other; }
+
+    const inline float getScale(){ return mScale; }
+    void setScale(float & other){ mScale = other; }
 
     const inline int getPosition(){ return mFftPosition; }
     void setPosition(int position){ mFftPosition = position; }
@@ -124,9 +127,6 @@ private:
     std::vector<BeatElement> mBeatsArray;
 
 public:
-
-
-
     BeatElement* operator[](int i){
         return &mBeatsArray.at(i);
     }
